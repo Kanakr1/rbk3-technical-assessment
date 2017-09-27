@@ -28,4 +28,16 @@ exports.updateEmailByName = function (name, newEmail, callback) {
 // Read all users from the database at once
 exports.readAllUsers = function (callback) {
   // TODO
+  // get request to give back a res of all users 
+
+  User.find().lean().exex(function(err, users){
+    return res.end(JSON.stringify(users))
+  });
+
+  // get('../models/User.js', function(){
+  //  User.findAll({})
+  //  .then()
+  // })
+   
+  
 };
