@@ -24,14 +24,14 @@ app.post('/api/users' , function (req ,res) {
 	// var obj ={name : req.body.user.name,
 	// 		  email : req.body.user.emai
 	// }
-	req.send(201 , JSON.stringify(user))
+	res.send(201 , JSON.stringify(user))
 })
 
 // user with matching id
 app.get('/api/users:id', function(req, res){
 	// get id from url using req.params.id
 	Users.getOne(req.params.id)
-	req.send(200 , JSON.stringify(req.body))
+	res.send(200 , JSON.stringify(req.body))
 });
  
 // put new user 
@@ -39,7 +39,7 @@ app.get('/api/users:id', function(req, res){
 app.put('/api/users/:id' , function (req , res) {
 	/* body... */
 	Users.updateOne(req.params.id, property)
-	req.send(200 , JSON.stringify(req.body);
+	res.send(200 , JSON.stringify(req.body);
 })
 
 
@@ -47,7 +47,7 @@ app.put('/api/users/:id' , function (req , res) {
 app.delete('/api/users/:id' , function (req , res) {
 	/* body... */
 	Users.deleteOne(req.params.id)
-	req.send(200 , JSON.stringify(req.body));
+	res.send(200 , JSON.stringify(req.body));
 })
 // Do not touch this invocation of the `listen` method
 app.listen('8888', function () {
