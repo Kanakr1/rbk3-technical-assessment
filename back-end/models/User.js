@@ -4,4 +4,16 @@ var exampleUser = {
   email: 'taka@taka.com'
 };
 
+//********************
+const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+mongoose.connect('mongodb://localhost/Jobs');
 
+var JobSchema = new Schema({
+  name: String,
+  emain: String
+});
+
+var Job = mongoose.model('Job', JobSchema);
+
+module.exports = Job;
