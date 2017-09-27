@@ -9,7 +9,7 @@ class App extends Component{
 		return (
 			<div>
 				<user name='username' type='txt'/>
-				<div>{this.props.state.map(user => {this.props.item})}</div>
+				<div id='li'>{this.props.state.map(user => {this.props.item})}</div>
 			</div>)
 	}
 }

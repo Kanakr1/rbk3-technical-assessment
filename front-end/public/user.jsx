@@ -21,8 +21,4 @@ class user extends React.Component{
 }
 
 
-
-
-
-
-module.exports = user;
+window.user = user;
