@@ -16,4 +16,10 @@ return this.http.get('http://localhost:3000/api/users').map(
 res => res.json()
 )
 }
+
+AddOnSubmit(users){
+let headers = new Headers();
+headers.append('Content-Type','application/json');
+return this.http.post('http://localhost:3000/api/users', users, {headers: headers}).map(users => users.json())
+}
 }
