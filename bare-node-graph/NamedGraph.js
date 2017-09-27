@@ -11,12 +11,12 @@ class NamedGraph extends Graph {
 NamedGraph.prototype = Object.create(Graph)
 NamedGraph.prototype.constructor = NamedGraph;
 NamedGraph.prototype.numberOfNodes = function () {
-return this.string.splite(" ").length;
+return this.string.split("\n").length;
 };
 
 
 NamedGraph.prototype.getEdges = function (node) {
-	lines = this.string.splite(" ");
+	lines = this.string.split("\n");
 	for (var i = 0; i < lines.length; i++) {
 		if(lines[i][0]===node){
 			wantedLine = lines[i];

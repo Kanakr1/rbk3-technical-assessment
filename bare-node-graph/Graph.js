@@ -32,13 +32,13 @@ Graph.prototype.numberOfNodes = function () {
 // therefore the number of lines is the number of nodes
 // splite the sting (" ") or (/n) 'as the hint says' and store in an array
 //the length of the array is the number of lines therefore the number of nodes 
-return this.string.splite(" ").length;
+return this.string.splite("\n").length;
 };
 
 // Returns an array of the edges for the passed in `node`
 Graph.prototype.getEdges = function (node) {
 	// again i will splite the sting by lines 
-	lines = this.string.splite(" ");
+	lines = this.string.splite("\n");
 	// loop to find the string that starts with the node number 
 	for (var i = 0; i < lines.length; i++) {
 		if(lines[i][0]===node){
@@ -53,7 +53,7 @@ Graph.prototype.getEdges = function (node) {
 // added this function to get nodes
 Graph.prototype.getNodes = function (node) {
 	// again i will splite the sting by lines 
-	lines = this.string.splite(" ");
+	lines = this.string.splite("\n");
 	var array = [];
 	// loop and push the node number 
 	for (var i = 0; i < lines.length; i++) {
@@ -64,7 +64,7 @@ Graph.prototype.getNodes = function (node) {
 // added this function to get number of edges for each node
 Graph.prototype.getNumberEdges = function (node) {
 	// again i will splite the sting by lines 
-	lines = this.string.splite(" ");
+	lines = this.string.splite("\n");
 	// loop to find the string that starts with the node number 
 	for (var i = 0; i < lines.length; i++) {
 		if(lines[i][0]===node){
