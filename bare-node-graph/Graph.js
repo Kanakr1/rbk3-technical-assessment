@@ -7,11 +7,11 @@ var fs = require('fs');
 // It will also make your code much easier to read and write.
 
 // HINT: Each line in the adjacency list is separated by newline character (`\n`).
-
+vae count =0
 var Graph = function (adjacencyListPath) {
   // Structure the graph in JavaScript in a way that will be of service to you
   this.nodes;
-
+  count++
   // String with your claim of the time complexity for `numberOfNodes`
   this.numberOfNodesTimeComplexity = undefined;
 
@@ -25,14 +25,20 @@ var Graph = function (adjacencyListPath) {
 
 // Returns the number of nodes in the graph
 Graph.prototype.numberOfNodes = function () {
+	return count;
+	//i have to make a for loop to count the node
+
 };
 
 // Returns an array of the edges for the passed in `node`
 Graph.prototype.getEdges = function (node) {
+	//we declarate an array
+	//we push eache edge to the array
 };
 
 // Returns the number of edges for the graph.
 Graph.prototype.numberOfEdges = function () {
+	//retern the length of array of edges
 };
 
 module.exports = Graph;
