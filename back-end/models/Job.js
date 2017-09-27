@@ -2,8 +2,12 @@
 var mongoose = require('mongoose');
 var schema=mongoose.Schema;
 var jobSchema=new schema({
-	job:String
+companyname:String,
+title:String,
+description:String,
+postedDate:Number,
+salary:Number
 })
 
-var Job=mongoose.Model('Job',jobSchema)
-Module.export=Job;
+var Job=mongoose.model('Job',jobSchema)
+module.exports=Job;

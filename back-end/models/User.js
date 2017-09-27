@@ -12,5 +12,5 @@ var UserSchema=new schema({
 	email:String
 
 })
-var User=mongoose.Model('User',UserSchema)
-Module.export=User;
+var User=mongoose.model('User',UserSchema)
+module.exports=User;
