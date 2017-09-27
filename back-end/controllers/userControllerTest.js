@@ -54,16 +54,25 @@ describe('User Controller', function () {
   it('should have a method that given the name of a user, retrieves their record from the database', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+        if(userController.getUserByName(callback)){
+          return done();
+        }
   });
 
   it('should have a method that given the name of a user, updates their `email` property', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+    if(userController.updateEmailByName(callback(newEmail))){
+      return done();
+    }
   });
 
   it('should have a method that reads all users from the database at once', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+    if(userController.readAllUsers()===mongoose.find({})){
+      return done();
+    }
   });
 
 });
