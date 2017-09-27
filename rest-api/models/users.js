@@ -38,13 +38,21 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+  if(id===user.id)
+  return user;
+
 };
 
 exports.addOne = function (user) {
+
+
 };
 
 exports.updateOne = function (id, newProperties) {
+  
 };
 
 exports.deleteOne = function (id) {
+  if(id===user.id)
+    remove(user);
 };
