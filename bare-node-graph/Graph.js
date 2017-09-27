@@ -23,11 +23,19 @@ var Graph = function (adjacencyListPath) {
   this.numberOfEdgesTimeComplexity = "O(n)";
 
 };
+var adjacencyListPaths = {
+  basic: __dirname + '/adjacency_lists/basic',
+  doubleDigits : __dirname + '/adjacency_lists/doubleDigits',
+  nonConsecutive : __dirname + '/adjacency_lists/nonConsecutive',
+  withNewline :  __dirname + '/adjacency_lists/withNewline',
+};
+
 
 // Returns the number of nodes in the graph
 Graph.prototype.numberOfNodes = function () {
-	console.log(fs.readFileSync('basic.text', 'utf8'))
-};
+	_.each(adjacencyListPaths, function (path, type) {
+	fs.readFileSync(path)
+});
 
 // Returns an array of the edges for the passed in `node`
 Graph.prototype.getEdges = function (node) {
