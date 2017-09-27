@@ -2,12 +2,13 @@ var express=require('express');
 var app=express();
 var path=require('path');
 var bodyparser=require("body-parser");
+app.use(bodyparser.json())
 // var User=require('back-end/controllers/userController');
 var mongoose=require('mongoose');
 // var Job=require('back-end/controllers/jobController');
 var mongod=mongoose.connect;
 // var db=require("./models/User");
-app.use(express.static(path.join(__dirname+'public')));
+app.use(express.static(path.join(__dirname+'front-end/public')));
 var port=process.env.Port||3000;
 
 

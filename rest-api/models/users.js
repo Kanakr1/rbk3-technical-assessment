@@ -38,13 +38,31 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+  for (var i = 0; i < user.length; i++) {
+    if(users[i].id===id){
+      return users[i];
+    }
+    return ('user undfined');
+  }
 };
-
 exports.addOne = function (user) {
+  users.push({name:user,id:getNextId()})
 };
 
 exports.updateOne = function (id, newProperties) {
+  for (var i = 0; i < user.length; i++) {
+    if(users[i].id===id){
+      return users[i].email = newProperties;
+    }
+    return ('user undfined');
+  }
 };
 
 exports.deleteOne = function (id) {
+  for (var i = 0; i < user.length; i++) {
+    if(users[i].id===id){
+      users.splice(users.indexOf(users[i]),1);
+    }
+    return ('user undfined');
+  }
 };

@@ -1,11 +1,13 @@
-module.angular("users",[])
+module.angular("users",['user'])
 .controller('addUser',function($ctrl){
 	$ctrl.addNewUser=function(){
 		$.ajax({
 			url:'http://localhost:3000/',
 			method:'POST',
 			data-type:"html",
-			
+			success:function(data){
+				$("#result").append(data);
+			}
 		})
 	}
 
