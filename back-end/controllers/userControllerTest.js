@@ -1,6 +1,7 @@
 var expect = require('chai').expect;
 var mongoose = require('mongoose');
 var User = require('../models/User');
+var userController=require('./userController.js')
 
 
 var dbURI = 'mongodb://localhost/jobquery';
@@ -24,26 +25,26 @@ describe('User Controller', function () {
   beforeEach(function (done) {
     clearDB(function () {
       var users = [
-        {
-          name: 'Magee',
-          email: 'magee@magee.com'
-        },
-        {
-          name: 'Dan',
-          email: 'dan@dan.com'
-        },
-        {
-          name: 'Beth',
-          email: 'beth@beth.com'
-        },
-        {
-          name: 'Sunny',
-          email: 'sunny@sunny.com'
-        },
-        {
-          name: 'Zach',
-          email: 'zach@zach.com'
-        }
+      {
+        name: 'Magee',
+        email: 'magee@magee.com'
+      },
+      {
+        name: 'Dan',
+        email: 'dan@dan.com'
+      },
+      {
+        name: 'Beth',
+        email: 'beth@beth.com'
+      },
+      {
+        name: 'Sunny',
+        email: 'sunny@sunny.com'
+      },
+      {
+        name: 'Zach',
+        email: 'zach@zach.com'
+      }
       ];
 
       // See http://mongoosejs.com/docs/models.html for details on the `create` method
@@ -54,16 +55,26 @@ describe('User Controller', function () {
   it('should have a method that given the name of a user, retrieves their record from the database', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+    expect(userController.getUserByName).to.exist;
+    // expect(userController.getUserByName('Sunny',function(user){
+    //    var userInfo=User.find({name:'Sunny'})
+    //    userInfo.equal({name:'Sunny',email:'sunny@sunny.com'});
+    // }))
+    done();
   });
 
   it('should have a method that given the name of a user, updates their `email` property', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+    expect(userController.updateEmailByName).to.exist;
+    done();
   });
 
   it('should have a method that reads all users from the database at once', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+    expect(userController.readAllUsers).to.exist;
+    done();
   });
 
 });

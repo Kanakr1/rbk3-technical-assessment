@@ -1,2 +1,34 @@
 <!-- YOUR CODE HERE -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RBK</title>
+	<h1>Hi RBK</h1>
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
+	<!-- 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script> -->
+	<script src="file:///Users/rbk21/Desktop/rbk3-technical-assessment/front-end/bower_components/angular/angular.js"></script>
+</head>
+<body>
+	<app ng-app="myApp">
+		<addUser>
+			<div class="add-user">
+				User name:
+				<input type="" name="username" ng-model="$ctrl.name"><br>
+				Email:
+				<input type="" name="emai" ng-model="$ctrl.email"><br>
+				<button ng-click="$ctrl.handleClick()">Add new User</button>
+			</div>
+		</addUser>
+		<viewUser>
+			<div>
+				<button ng-click="$ctrl.view">View Users</button>
+			</div>
+		</viewUser>
+	</app>
+	
 
+	<script src="index.js"></script>
+
+
+</body>
+</html>

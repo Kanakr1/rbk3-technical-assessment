@@ -1,5 +1,17 @@
 {
+  "name": "back-end",
+  "description": "You are working on the back end for an application intended to support its users in exploring current job openings. You will do the following in 2 phases:",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
   "scripts": {
     "test": "mocha --require ../node_modules/babel-core/register models/UserTest.js models/JobTest.js controllers/userControllerTest.js controllers/jobControllerTest.js"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
+    "mongoose": "^4.11.13"
   }
 }
