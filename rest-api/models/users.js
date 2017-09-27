@@ -38,13 +38,24 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+  return users[id-1];
 };
 
 exports.addOne = function (user) {
+  users.push(user);
+  users[users.length-1].id = getNextId();
+  return users[users.length-1];
 };
 
 exports.updateOne = function (id, newProperties) {
+  for(var key in newProperties) {
+    users[id][key] = newProperties[key];
+  }
 };
 
 exports.deleteOne = function (id) {
+  users.splice(id-1,1);
+  for(var i=id-1; i<users.length; i++) {
+    users[i].id = users[i].id -1;
+  }
 };
