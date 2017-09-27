@@ -7,25 +7,58 @@ http.createServer(function (req, res) {
   res.end(index);
 }).listen(3000);
 
-angular.module("myApp", []);
-
-function GetController($scope,$http) {
-
-    $scope.click = function() {
 
 
-        var response = $http.get('http://localhost:3000/api/users ');
-
+   
+server=http.createServer(function(req,res){
+      var response = $http.get('http://localhost:3000/api/users ');
+      
         response.success(function(req,res) {
+            .find({}).then(function(err,data){
 
-            console.log("success");
+            })
 
         });
 
         response.error(function(req,res) {
-            console.log	('err');
+            console.log ('err');
         });
 
     };
+
+      
+
+server=http.createServer(function(req,res){
+var response = $http.post('http://localhost:3000/api/users ');
+
+        response.success(function(req,res) {
+              .create().then(function(err,data){
+                console.log("done")
+
+            })
+
+        });
+
+        response.error(function(req,res) {
+            console.log ('err');
+        });
+
+    
+}
+
+
+server=http.createServer(function(req,res){
+var response = $http.get('http://localhost:3000/api/users ');
+
+        response.success(function(req,res) {
+            .find({user:user},{id:id}).then(function(err,data){
+                console.log("mmmm")
+            })
+        });
+
+        response.error(function(req,res) {
+            console.log ('err');
+        });
+
 
 }
