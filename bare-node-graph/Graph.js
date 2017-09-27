@@ -19,7 +19,7 @@ var Graph = function (adjacencyListPath) {
   this.getEdgesTimeComplexity = "O(n)";
 
   // String with your claim of the time complexity for `numberOfEdges`
-  this.numberOfEdgesTimeComplexity = "O(n)";
+  this.numberOfEdgesTimeComplexity = "O(n^2)";
 
 };
 
@@ -70,6 +70,25 @@ Graph.prototype.getEdges = function (node) {
 
 // Returns the number of edges for the graph.
 Graph.prototype.numberOfEdges = function () {
+	// to count the number of edges we have to make an array of lines of the graph each line is array also 
+	// after that we should cal      Not Completed
+    var arr=[]
+    var objAll={}
+    var result=[]
+    fs.readFileSync(adjacencyListPath).toString().split("\n").forEach(function(line){
+    	arr.push(line)
+     });
+    for(var i=0;i<arr.length;i++ ){
+    	arr[i]=arr[i].split(' ');
+    }
+      for (var i=0; i<arr.length;i++ ){
+    	if((arr[i])[0]===node){
+    		result = arr[i].split('');
+
+    	}
+    }
+    for (var i=0;i<arr.length;i++)
+
 };
 
 module.exports = Graph;
