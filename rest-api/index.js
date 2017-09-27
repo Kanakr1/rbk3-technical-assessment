@@ -14,6 +14,15 @@ app.use(bodyParser.json());
 ///but my mind can't transalete any code now
 
 
+$.ajax({
+	method :"POST",
+	url :'/api/users' ,
+
+}).done(function(name, id){
+	
+})
+
+
 
 // Do not touch this invocation of the `listen` method
 app.listen('8888', function () {
