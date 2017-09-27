@@ -10,6 +10,9 @@ var fs = require('fs');
 
 var Graph = function (adjacencyListPath) {
   // Structure the graph in JavaScript in a way that will be of service to you
+  fs.readFileSync(adjacencyListPath,function (err,data) {
+    this.data=data;
+  })
   this.nodes;
 
   // String with your claim of the time complexity for `numberOfNodes`
@@ -25,6 +28,7 @@ var Graph = function (adjacencyListPath) {
 
 // Returns the number of nodes in the graph
 Graph.prototype.numberOfNodes = function () {
+  return this.data;
 };
 
 // Returns an array of the edges for the passed in `node`
