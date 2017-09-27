@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "json-server --watch db.json --routes routes.json",
-    "webpack": "webpack --config webpack.config.js",
+    "webpack": "webpack -w",
     "build": "babel public/src -d public/compiled -w"
   },
   "dependencies": {
@@ -14,8 +14,11 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "webpack": "^3.6.0"
   }
 }
