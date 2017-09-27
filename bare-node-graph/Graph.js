@@ -1,6 +1,6 @@
 // You'll need the `fs` module to read the adjacency list.
 var fs = require('fs');
-fs.readFileSync( new URL(''))
+fs.readFileSync( new URL('bare-node-graph/Graph'))
 // HINT: fs.readFileSync is a great way to get the contents of a file.
 // Using the synchronous version of the `readFile` method is appropriate here,
 // because it is not a performance bottleneck.
@@ -22,7 +22,7 @@ var Graph = function (adjacencyListPath) {
   this.numberOfEdgesTimeComplexity = undefined;
 
 };
-.
+
 // Returns the number of nodes in the graph
 Graph.prototype.numberOfNodes = function () {
 	callback(this.node[i])
