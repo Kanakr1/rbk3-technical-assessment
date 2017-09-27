@@ -5,3 +5,13 @@ var exampleUser = {
 };
 
 
+var mongoose=require('mongoose');
+
+var schema= new mongoose.Schema({
+	name:String,
+	email:String
+});
+
+var User = mongoose.model('User', schema);
+
+module.exports=User;
