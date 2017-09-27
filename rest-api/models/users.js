@@ -61,6 +61,8 @@ exports.updateOne = function (id, newProperties) {
   //         if(key === k){
   //           obj
   //         }
+  // compare keys and update the value of this keys by taken the value 
+  //of this keys from newProperties
     for(key in newProperties){
      if(key === "name"){
           obj.name === newProperties.name;
