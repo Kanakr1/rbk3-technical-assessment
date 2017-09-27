@@ -25,14 +25,28 @@ var Graph = function (adjacencyListPath) {
 
 // Returns the number of nodes in the graph
 Graph.prototype.numberOfNodes = function () {
-};
 
+var array = fs.readFileSync('adjacencyListPath/basic','adjacencyListPath/doubleDigits').toString().split("\n");
+    console.log(array.length);
+};
+var edgesnum=0;
 // Returns an array of the edges for the passed in `node`
 Graph.prototype.getEdges = function (node) {
+var liner = new fs(adjacencyListPath);
+var vertexes_number = parseInt(liner.next().toString('ascii'));
+var edges_number = parseInt(liner.next().toString('ascii'));
+var edges = [];
+var next;
+while (next = liner.next()) {
+    edges.push(next.toString('ascii').split(' '));
+}
+edgesnum=edges.length;
+return edges;
 };
 
 // Returns the number of edges for the graph.
 Graph.prototype.numberOfEdges = function () {
+	return edgesnum;
 };
 
 module.exports = Graph;
