@@ -28,4 +28,14 @@ app.get('/api/users',function (req,res) {
     res.end();
 
 
+app.get('/api/users/:id',function (req,res) {
+  var data=db.getdata('db.json');
+  for(var i=0;i<data.users.length;i++){
+    if(data.users[i].id==req.url.substring(req.url.lastIndexOf('/')+1)){
+      res.send(JSON.stringify(data.users[i]));
+    }
+  }
+    res.end();
+
+
 })
