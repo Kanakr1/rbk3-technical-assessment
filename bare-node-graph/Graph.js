@@ -48,7 +48,25 @@ Graph.prototype.getEdges = function (node) {
 
 // Returns the number of edges for the graph.
 Graph.prototype.numberOfEdges = function () {
-
+	var x = fs.readFileSync(this.path, 'utf8').split('\n')
+	console.log(x)
+	for (var i = 0; i < x.length; i++){
+		var st = x[i][0]
+		for (var j = 1; j < x[i].length; j++){
+			if (st === x[i][j]){
+				x[i].splice(j,1)
+			}
+			
+		}
+	}
+	console.log(x)
+var counter = 0
+	for (var k = 0; k < x.length; k++){
+		if (x[i].length > 1){
+			counter++
+		}
+	}
+	return counter
 };
 
 module.exports = Graph;
