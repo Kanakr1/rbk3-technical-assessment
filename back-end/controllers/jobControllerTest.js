@@ -26,4 +26,18 @@ describe('Job Controller', function () {
   });
 
   // TODO: Write your tests for jobController here
-});
+
+  it('should have a method that given the job values of a job table, insert the record to the database', function (done) {
+  // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
+  // HINT: The `done` passed in is quite important...
+  // add a new recourd to the database 
+  //the input should have the value to all column 
+  });
+   it('should have a method that return  all the records  the database that have the salary > 50000 $', function (done) {
+  // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
+  // HINT: The `done` passed in is quite important...
+  // return all recourds with all data when the salary > 50000
+  })
+
+  });
+
