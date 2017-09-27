@@ -8,7 +8,9 @@ var mongoose=require('mongoose');
 // var Job=require('back-end/controllers/jobController');
 var mongod=mongoose.connect;
 // var db=require("./models/User");
+app.use(express.static(path.join(__dirname+'/')));
 app.use(express.static(path.join(__dirname+'front-end/public')));
+
 var port=process.env.Port||3000;
 
 

@@ -18,4 +18,4 @@ inter a new username and email to add to your DB <input type="text" name="newUse
 <input type="submit" ng-click="addNewUser()" name="search for user">
 <div id=result></div>
 
-`
+`;
