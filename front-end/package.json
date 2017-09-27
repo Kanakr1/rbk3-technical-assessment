@@ -1,5 +1,11 @@
 {
   "scripts": {
     "start": "json-server --watch db.json --routes routes.json"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "react": "^16.0.0",
+    "react-document": "^0.7.1",
+    "react-dom": "^15.6.1"
   }
 }

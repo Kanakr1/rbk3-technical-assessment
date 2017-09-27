@@ -22,8 +22,14 @@ describe('Job Controller', function () {
   beforeEach(function (done) {
     clearDB(function () {
       // TODO: Seed database with some jobs to run tests against. 
+
     });
   });
 
   // TODO: Write your tests for jobController here
+  it('shode insert a job',function(){
+    expect(insert a job insied 'jobs')
+  })
+
+  it('shode select the salary greater than 50.000')
 });
