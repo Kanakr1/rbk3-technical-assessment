@@ -13,7 +13,7 @@ var Graph = function (adjacencyListPath) {
   this.nodes;
 
   // String with your claim of the time complexity for `numberOfNodes`
-  this.numberOfNodesTimeComplexity = "O(n)";
+  this.numberOfNodesTimeComplexity = "O(n^2)";
 
   // String with your claim of the time complexity for `getEdges`
   this.getEdgesTimeComplexity = "O(n)";
@@ -27,12 +27,19 @@ var Graph = function (adjacencyListPath) {
 Graph.prototype.numberOfNodes = function () {
 	//the number of the nudes is the summation of the number of nudes in each line of the graph withpout 
     //the repeated items so we have to add the nude just once 
-	var objAll={}
-	var allnodes=fs.readFileSync(this.nodes);
-	allnodes = allnodes.split(' ');
-	for(var i=0;i<allnodes.length;i++){
-		objAll[allnodes[i]]=objAll[allnodes[i]] +1 || 0;
-	}
+    var arr=[]
+    var objAll={}
+    fs.readFileSync(adjacencyListPath).toString().split("\n").forEach(function(line){
+    	arr.push(line)
+     });
+    for(var i=0;i<arr.length;i++ ){
+    	arr[i]=arr[i].split(' ');
+    }
+    for(var i = 0;i<arr.length;i++){
+    	for(var j=0;j<arr[i].length;j++){
+    		objAll[(arr[i])[j]] = objAll[(arr[i])[j]] + 1 || 0 
+    	}
+    }
 	return Object.keys(objAll).length
 
 };
@@ -41,14 +48,23 @@ Graph.prototype.numberOfNodes = function () {
 Graph.prototype.getEdges = function (node) {
 	// the edges that related to the nude are: the nudes in the same line that begins with this nude>
 	// we can get nudes by converting this line int array  and returning the array without the first element.
+    var arr=[]
+    var objAll={}
+    var result=[]
+    fs.readFileSync(adjacencyListPath).toString().split("\n").forEach(function(line){
+    	arr.push(line)
+     });
+    for(var i=0;i<arr.length;i++ ){
+    	arr[i]=arr[i].split(' ');
+    }
+    for (var i=0; i<arr.length;i++ ){
+    	if((arr[i])[0]===node){
+    		result = arr[i].split('');
 
-var result=[];
-var obj={};
-var allnodes=fs.readFileSync(this.nodes);
-	allnodes = allnodes.split(',')
-	for(var i=0;i<allnodes.length;i++){
-		objAll[allnodes[i]]=objAll[allnodes[i]] +1 || 0;
-	}
+    	}
+    }
+    result.shift();
+    return result;
 
 };
 
