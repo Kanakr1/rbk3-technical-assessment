@@ -3,12 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title>Insert user</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
-  <body>
+  <body ng-app="myApp" ng-controller="myCtrl">
     <form  action="/api/users" method="post">
       <input type="text" name="username"><br>
       <input type="password" name="password">
       <input type="submit" name="submit" value="Send">
     </form>
+    <div>
+    <div ng-repet="item in data"></div>
+  </div>
+
   </body>
+
+  <script type="text/javascript">
+      var app=angular.module("myApp",[]);
+      app.controller("myCtrl",function ($scope) {
+        $.ajax({
+          url:'/api/users',
+          async:false,
+          success:function (err,data) {
+            $scope.data=data;
+          }
+        })
+      })
+  </script>
 </html>
