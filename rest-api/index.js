@@ -8,6 +8,12 @@ app.use(bodyParser.json());
 // YOUR CODE BELOW
 
 
+////i know that we must make an obj to save the name and a counter to the id
+///and we will use ajax by get and post method 
+/// and the url that you give in readme 
+///but my mind can't transalete any code now
+
+
 
 // Do not touch this invocation of the `listen` method
 app.listen('8888', function () {
