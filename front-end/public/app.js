@@ -1,4 +1,7 @@
 angular.module('app')
-.component('',{
-	template: ``
+	.component({
+		'/get', function(req,res){
+		return JSON.stringify(users)
+},
+
 })
