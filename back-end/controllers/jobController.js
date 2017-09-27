@@ -10,7 +10,7 @@ exports.createJob = function (job, callback) {
 	salary:500
 
   })
-  .callback(err,job){
+  callback(err,job){
   	if(err){
   		console.log(err)
   	}
@@ -20,6 +20,7 @@ exports.createJob = function (job, callback) {
 // Get all jobs that have a salary greater than $50,000
 exports.getHighPayingJobs = function (callback) {
   // TODO
+ var query
   Job.find({}).where('salary').gt(50000).exec(callback(err,result){
   
 
