@@ -1,2 +1,21 @@
 <!-- YOUR CODE HERE -->
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>User</title>
+<script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
 
+</head>
+<body>
+	<ul ng-controller="WorldCtrl">
+    <li ng-repeat="job in Jod">
+        {{job.company}} 
+        {{job.title}}
+        {{job.description}}
+        {{job.postedDate}}
+        {{job.salary}}      
+    </li>
+    </ul>
+    
+</body>
+</html>
