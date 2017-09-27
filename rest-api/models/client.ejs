@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+$.ajax({
+    type: "post",
+    url: '/api/users',
+    dataType: "",
+    success: function(res) {
+        var res_data = JSON.parse(res);
+        console.log(res_data);
+    }
+});
+$.ajax({
+    type: "GET",
+    url: '/api/users',
+    dataType: "json",
+    success: function(res) {
+        var res_data = JSON.parse(res);
+        console.log(res_data);
+    }
+});
+</body>
+</html>
