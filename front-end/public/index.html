@@ -1,2 +1,25 @@
 <!-- YOUR CODE HERE -->
+<!DOCTYPE html>
+<html>
+<head>
 
+	<script type="text/javascript" src ="../node_modules/anguler/angular.js"></script>
+	<script type="text/javascript" src ="../node_modules/jquery"></script>
+	<script type="text/javascript" src ="./app.js"></script>
+	<title></title>
+</head>
+<body ng-app = "app" ng-contrller = "creatUser">
+
+	<div>
+		<form>
+			Name :<input  id = "name" type="text" name="username">
+			Email :<input id = "email" type="email" name="email">
+			<button ng-click= $ctrl.save() >submit</button>
+		</form>
+		<ul>
+			<li>{{data.name}}</li>
+		</ul>
+	</div>
+
+</body>
+</html>

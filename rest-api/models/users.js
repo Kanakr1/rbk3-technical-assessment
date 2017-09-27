@@ -2,21 +2,21 @@ var _ = require('underscore');
 
 // The seeded state of our in-memory "database"
 var users = [
-  {
-    id: 1,
-    name: 'Taka',
-    email: 'taka@taka.com'
-  },
-  {
-    id: 2,
-    name: 'Nayo',
-    email: 'nayo@nayo.com'
-  },
-  {
-    id: 3,
-    name: 'Amrit',
-    email: 'amrit@amrit.com'
-  }
+{
+  id: 1,
+  name: 'Taka',
+  email: 'taka@taka.com'
+},
+{
+  id: 2,
+  name: 'Nayo',
+  email: 'nayo@nayo.com'
+},
+{
+  id: 3,
+  name: 'Amrit',
+  email: 'amrit@amrit.com'
+}
 ];
 
 var nextId = 4;
@@ -38,13 +38,45 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+
+  for (var i= 0; i<users.length ; i++){
+   if (users[i].id === id ){
+    return users[i].name ;
+  }
+  else {
+    return "user not found"
+  }
+}
+
 };
 
 exports.addOne = function (user) {
+  users.push(user);
+  console.log("user added")
 };
 
 exports.updateOne = function (id, newProperties) {
+  for(var i = 0; i<users.length ;i++){
+    if (users[i].id === id ){
+     users[i]= newProperties;
+     console.log("user updated")
+   }
+   else {
+    return "user not found"
+   }
+ }  
+
 };
 
 exports.deleteOne = function (id) {
+  for (var i = 0; i<users.length ; i++){
+    if (users[i].id === id ){
+      users.slice(users[i])
+      console.log("user deleted")
+    }
+    else {
+      return "user not found"
+    }
+  }
 };
+
