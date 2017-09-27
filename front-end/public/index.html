@@ -8,26 +8,40 @@
   </head>
   <body ng-app="myApp" ng-controller="myCtrl">
     <form  action="/api/users" method="post">
-      <input type="text" name="username"><br>
-      <input type="password" name="password">
+      <input id="username" type="text" name="username"><br><br>
+      <input id="email" type="email" name="email"><br><br>
       <input type="submit" name="submit" value="Send">
+      <a href="/api/users">show all users</a>
     </form>
     <div>
-    <div ng-repet="user in data"></div>
+    <div ng-repet="user in data">
+    id:{{user.id}}<br>
+    name:{{user.name}}<br>
+    email:{{user.email}}<br><br>
+    </div>
   </div>
 
   </body>
 
   <script type="text/javascript">
-      var app=angular.module("myApp",[]);
-      app.controller("myCtrl",function ($scope) {
-        $.ajax({
+      var username = $('#username').val();
+      var email = $('#email').val();
 
+      var app=angular.module("myApp",[]);
+
+      app.controller("myCtrl",function ($scope) {
+        $.getJSON({
           url:'/api/users',
           success:function (err,data) {
             $scope.data=data;
           }
         })
+      });
+      $.ajax({
+        method:'POST',
+        url:'/api/users',
+        dataType:'jsonp',
+        data:{id:null,name:username,email:email}
       })
   </script>
 </html>
