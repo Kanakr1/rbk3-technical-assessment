@@ -3,8 +3,8 @@
 You are working on the back end for an application intended to support its users in exploring current job openings. You will do the following in 2 phases:
 
 - **Model phase**
-  - Write a `User` Mongoose model
-  - Write a `Job` Mongoose model
+ d - Write a `User` Mongoose model
+ d - Write a `Job` Mongoose model
   - Make the `User Model` and `Job Model` tests pass
 - **Controller phase**
   - Write tests for a `userController` which will have 3 methods for performing MongoDB operations on users
