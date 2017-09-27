@@ -13,7 +13,7 @@
       <input type="submit" name="submit" value="Send">
     </form>
     <div>
-    <div ng-repet="item in data"></div>
+    <div ng-repet="user in data"></div>
   </div>
 
   </body>
@@ -22,8 +22,8 @@
       var app=angular.module("myApp",[]);
       app.controller("myCtrl",function ($scope) {
         $.ajax({
+
           url:'/api/users',
-          async:false,
           success:function (err,data) {
             $scope.data=data;
           }

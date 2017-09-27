@@ -1,13 +1,18 @@
 var express = require('express');
 var fs=require('fs');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var JsonDB=require('node-json-db');
 var app=express();
+
 
 app.use(express.static(__dirname+"/"));
 app.use(express.static(__dirname+"/html"));
 
 
 app.use(bodyParser.urlencoded());
+
+
+var db = JsonDB("users",true);
 
 app.get('/',function (req,res) {
   fs.readFile('public/index.html',function (err,data) {
@@ -18,11 +23,8 @@ app.get('/',function (req,res) {
 })
 
 app.get('/api/users',function (req,res) {
-
-    res.send(JSON.stringify(req.body));
+  var data=db.getdata('db.json');
+    res.send(JSON.stringify(data));
     res.end();
 
 })
-
-
-app.listen(3000);

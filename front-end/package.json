@@ -1,5 +1,8 @@
 {
   "scripts": {
     "start": "json-server --watch db.json --routes routes.json"
+  },
+  "dependencies": {
+    "node-json-db": "^0.7.3"
   }
 }
