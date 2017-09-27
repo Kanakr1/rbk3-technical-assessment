@@ -25,6 +25,14 @@ var Graph = function (adjacencyListPath) {
 
 // Returns the number of nodes in the graph
 Graph.prototype.numberOfNodes = function () {
+	var objAll={}
+	var allnodes=fs.readFileSync(this.nodes);
+	allnodes = allnodes.split(',')
+	for(var i=0;i<allnodes.length;i++){
+		objAll[allnodes[i]]=objAll[allnodes[i]] +1 || 0;
+	}
+	return Object.keys(objAll).length
+
 };
 
 // Returns an array of the edges for the passed in `node`
