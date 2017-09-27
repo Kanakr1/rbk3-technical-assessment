@@ -38,13 +38,37 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+  for(var i=0;i<users.length; i++){
+    if(users[i].id === id){
+      return users[i];
+    }
+    return ('no matched');
+  }
 };
 
 exports.addOne = function (user) {
+  users.push(user);
 };
 
 exports.updateOne = function (id, newProperties) {
+  for(var i=0;i<users.length; i++){
+    if(users[i].id === id){
+      users[i].newProperties; ///
+      return users[i];
+    }
+    return ('no matched');
+  }
 };
 
 exports.deleteOne = function (id) {
+  for(var i=0;i<users.length; i++){
+    if(users[i].id === id){
+      var x = users;
+      x=users.slice(0,users[i]);
+      x.push(users.slice(users[i+1]))
+      users=x;
+      return users;
+    }
+    return ('no matched');
+  }
 };
