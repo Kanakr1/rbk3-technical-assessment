@@ -38,13 +38,31 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+  users.each ((ele, i) => {
+    if (ele.id === id)
+      return ele;
+    return 'invalid id';
+  })
 };
 
 exports.addOne = function (user) {
+  return users.push(user);
 };
 
 exports.updateOne = function (id, newProperties) {
+  users.each ((ele, i)=>{
+    if (ele.id === id)
+      users[i] = newProperties;
+    else {
+        return 'invalid id';
+    }
+  });
 };
 
 exports.deleteOne = function (id) {
+  users.each ((ele, i)=>{
+    if(ele.id === id)
+      return users.splice(i, 1);
+    return 'invalid id';
+  })
 };
