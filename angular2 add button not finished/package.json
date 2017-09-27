@@ -1,0 +1,25 @@
+{
+  "name": "jobs",
+  "version": "1.0.0",
+  "description": "jobs informations",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shyma-sane/rbk3-technical-assessment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shyma-sane/rbk3-technical-assessment/issues"
+  },
+  "homepage": "https://github.com/shyma-sane/rbk3-technical-assessment#readme",
+  "devDependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.15.5",
+    "mongojs": "^2.4.1"
+  }
+}
