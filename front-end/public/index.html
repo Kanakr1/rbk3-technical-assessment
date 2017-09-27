@@ -1,2 +1,89 @@
 <!-- YOUR CODE HERE -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="/node_modules/angular/angular.js"></script>
+	<title>Angular</title>
+</head>
+<body ng-app="app">
+<script>
+	angular.module(app , [])
+	.controller("userData"){
+		this.userName = $ctrl.name,
+		this.userEmail = $ctrl.email,
+		this.id = $ctrl.id,
+		this.paostData = function ($http) {
+			/* body... */
+			$http({
+    method: 'POST',
+    url: '/api/users',
+    data:{name : this.userName , email: this.userEmail}
+}).then(function(response) {
+            // success
+      console.log('data saved')
+    }, 
+    function(response) { // optional
+            // failed
+            console.log(error)
+    });
+		},
+		this.getData = function ($http) {
+			/* body... */
+			$http.get('/api/users:id').success(function(data){
+        this.usrerNAme = data.name;
+        this.userEMail = data.email
+    });
+		},
+		this.getDataById(id) = function ($http) {
+			/* body... */
+            var requestUrl = '/api/users/' +id 
+			$http.get('requestUrl').success(function(data){
+				return (
+						this.usrerNAme = data.name;
+						this.userEmail = data.emai;
 
+					)
+		}
+
+
+	},
+
+}	
+
+</script>
+
+<form ng-controller = "userData">
+	user name<input type="text" ng-module="name">
+	user email<input type = "text" ng-module="email">
+	<input type="button" value="submit" ng-module="email">
+	<input type="button" value="post" ng-module="postData()">
+	<input type="button" value="get" ng-module="getData()">
+	
+</form>
+<!-- onther form to give data by id -->
+<form ng-controller = "userData">
+	user ID<input type="number" ng-module="id">
+	<input type="button" value="getDataById" ng-module="getDataById()">
+
+</form>
+	<div>
+		<table>
+			<tr>
+				<td>user name</td>
+				<td>user email</td>
+
+			</tr>
+			<tr>
+				<td>{{ctrl.usrerNAme}}</td>
+				<td>{{ctrl.userEMail}}</td>
+
+			</tr>
+		</table>
+	</div>
+
+
+
+
+
+</body>
+</html>
