@@ -53,8 +53,23 @@ exports.addOne = function (user) {
 
 exports.updateOne = function (id, newProperties) {
   for (var i = 0; i < users.length; i++) {
-    
-  }
+    if(users[i].id === id){
+      var obj = user[i].id;
+    }
+  //   for(key in newProperties){
+  //     for(k in obj){
+  //         if(key === k){
+  //           obj
+  //         }
+    for(key in newProperties){
+     if(key === "name"){
+          obj.name === newProperties.name;
+     }
+     if(key === "email"){
+      obj.email === newProperties.email;
+      }
+    }
+     return obj;
 };
 
 exports.deleteOne = function (id) {
