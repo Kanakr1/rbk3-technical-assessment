@@ -13,21 +13,23 @@ var Graph = function (adjacencyListPath) {
   this.nodes;
 
   // String with your claim of the time complexity for `numberOfNodes`
-  this.numberOfNodesTimeComplexity = undefined;
+  this.numberOfNodesTimeComplexity = "O(n)";
 
   // String with your claim of the time complexity for `getEdges`
-  this.getEdgesTimeComplexity = undefined;
+  this.getEdgesTimeComplexity = "O(n)";
 
   // String with your claim of the time complexity for `numberOfEdges`
-  this.numberOfEdgesTimeComplexity = undefined;
+  this.numberOfEdgesTimeComplexity = "O(n)";
 
 };
 
 // Returns the number of nodes in the graph
 Graph.prototype.numberOfNodes = function () {
+	//the number of the nudes is the summation of the number of nudes in each line of the graph withpout 
+    //the repeated items so we have to add the nude just once 
 	var objAll={}
 	var allnodes=fs.readFileSync(this.nodes);
-	allnodes = allnodes.split(',')
+	allnodes = allnodes.split(' ');
 	for(var i=0;i<allnodes.length;i++){
 		objAll[allnodes[i]]=objAll[allnodes[i]] +1 || 0;
 	}
@@ -37,6 +39,17 @@ Graph.prototype.numberOfNodes = function () {
 
 // Returns an array of the edges for the passed in `node`
 Graph.prototype.getEdges = function (node) {
+	// the edges that related to the nude are: the nudes in the same line that begins with this nude>
+	// we can get nudes by converting this line int array  and returning the array without the first element.
+
+var result=[];
+var obj={};
+var allnodes=fs.readFileSync(this.nodes);
+	allnodes = allnodes.split(',')
+	for(var i=0;i<allnodes.length;i++){
+		objAll[allnodes[i]]=objAll[allnodes[i]] +1 || 0;
+	}
+
 };
 
 // Returns the number of edges for the graph.
