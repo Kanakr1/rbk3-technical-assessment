@@ -1,5 +1,6 @@
 var _ = require('underscore');
 
+
 // The seeded state of our in-memory "database"
 var users = [
   {
@@ -38,13 +39,20 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+  if(id === user.id)
+    return user;
 };
 
 exports.addOne = function (user) {
+  // var user = setAll(newOne)
+  // users.push(user)
+  
 };
 
 exports.updateOne = function (id, newProperties) {
+  // 1. for loop search to find id and then add new properties
 };
 
 exports.deleteOne = function (id) {
+  // find id then pop it from the array of user
 };
