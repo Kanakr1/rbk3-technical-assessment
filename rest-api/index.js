@@ -19,8 +19,8 @@ $.ajax({
 	url :'/api/users' ,
 
 }).done(function(name, id){
-	
-})
+
+});
 
 
 
