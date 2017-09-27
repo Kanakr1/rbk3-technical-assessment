@@ -1,4 +1,4 @@
-var db=require("../models/user")
+var db=require("../models/User")
 // Given the name of a user, retrieve their record from the database
 exports.getUserByName = function (name, callback) {
   // TODO

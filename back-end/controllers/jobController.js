@@ -1,4 +1,4 @@
-var db=require('../models/job')
+var db=require('../models/Job')
 // Create a new job in the database
 exports.createJob = function (job, callback) {
   // TODO
@@ -17,7 +17,7 @@ exports.getHighPayingJobs = function (callback) {
   	if(err){
   		console.log(err);
   	}
-  	else if(db.salary > 50.000){
+  	else if(data > 50.000){
   		db.findAll(db.title,function(err,titles){
   			if(err) console.log(err);
   			callback(titles);

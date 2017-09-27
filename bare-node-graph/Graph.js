@@ -25,6 +25,7 @@ var Graph = function (adjacencyListPath) {
 
 // Returns the number of nodes in the graph
 Graph.prototype.numberOfNodes = function () {
+	
 };
 
 // Returns an array of the edges for the passed in `node`
