@@ -16,3 +16,6 @@ exports.getHighPayingJobs = function (callback) {
   // TODO
   User.find()
 };
+
+
+//a mistake happened where i commited the entire assessment file with the comment "secon change back-end", i only ment it for the back-end file
