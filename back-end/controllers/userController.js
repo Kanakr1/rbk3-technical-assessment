@@ -34,3 +34,12 @@ exports.readAllUsers = function (callback) {
   	callback(data);
   })
 };
+exports.addUser=function(name,email,callback){
+  if(name===db.name && email===db.email){
+    return null;
+  }
+  User.save(function (error,data){
+    if(err) console.error(err);
+    callback(name,email)
+  })
+}

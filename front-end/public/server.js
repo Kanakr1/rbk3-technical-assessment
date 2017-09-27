@@ -1,19 +1,19 @@
 var express=require('express');
-var app=express;
+var app=express();
 var path=require('path');
-var bodyparser=require("pody-parser");
-var User=require('../back-end/controllers/userController');
+var bodyparser=require("body-parser");
+// var User=require('back-end/controllers/userController');
 var mongoose=require('mongoose');
-var Job=require('../back-end/controllers/jobController');
+// var Job=require('back-end/controllers/jobController');
 var mongod=mongoose.connect;
-var db=require("../models/User");
-
-var port=process.env.Port||3000;
+// var db=require("./models/User");
 app.use(express.static(path.join(__dirname+'public')));
+var port=process.env.Port||3000;
+
 
 
 app.get('/',function(req,res){
-	res.sendFile(path.join(__dirname+'index.html'))
+	res.sendFile(path.join(__dirname,'index.html'))
 })
 app.get('/api/users',function(req,res){
 	res.send(bodyparser.json(User.readAllUsers(function(data){
@@ -32,7 +32,15 @@ app.get('/api/users/id',function(req,res){
 	})))
 });
 
-// app.post()
+app.post('/user',function(req,res){
+	User.addUser(bodyparser.parse(req.body.name,req.body.email,
+			function (name,email){
+				db.save(req.body.name,req.body.email,function(err){
+					if(err) console.error(err);
+				})
+			}
+		))
+})
 
 
 app.listen(port);
