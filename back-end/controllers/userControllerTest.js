@@ -9,6 +9,9 @@ var dbURI = 'mongodb://localhost/jobquery';
 var clearDB = function (done) {
   mongoose.connection.collections['users'].remove(done);
 };
+// var create = function (done) {
+//   mongoose.connection.collections
+// }
 
 describe('User Controller', function () {
 
@@ -54,11 +57,13 @@ describe('User Controller', function () {
   it('should have a method that given the name of a user, retrieves their record from the database', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+    return db.find({type: 'User'}).should.eventualy.have.length(2);
   });
 
   it('should have a method that given the name of a user, updates their `email` property', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+
   });
 
   it('should have a method that reads all users from the database at once', function (done) {

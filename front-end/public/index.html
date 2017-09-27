@@ -1,2 +1,41 @@
 <!-- YOUR CODE HERE -->
 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+		<script>
+			
+		angular.module('App',[])
+        .controler('Ngctrl', function($scope){
+        	$scope.id='1';
+        	$scope.name='angular';
+        	$scope.email='angular@angular.org'})
+
+        $http({
+        	url: '/api/users',
+        	method: "POST",
+        	data:{'id':'2','name':'react','email':'ggkjh'}
+        }).then(function successCallback(response){
+        	$scope.data =response.data;
+        })
+        $http({
+        	url:'localhost/api/users/:id ',
+        	method:'GET',
+            params: {user_id: user.id}
+        });
+
+		</script>
+	</title>
+</head>
+<body>
+<div ng-app='App'>
+	<div ng-controller='Ngctrl'>
+		name:<input  ng-model="name">{{name}}
+	</div>
+</div>
+</body>
+</html>
+
