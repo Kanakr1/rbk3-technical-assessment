@@ -38,9 +38,18 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+  for (var user of users) {
+    if (user.id === id) {
+      return user;
+    }
+  }
+  return null;
 };
 
 exports.addOne = function (user) {
+  uers.id = getNextId();
+  users.push(user);
+  return nextId - 1;
 };
 
 exports.updateOne = function (id, newProperties) {

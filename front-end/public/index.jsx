@@ -8,7 +8,7 @@ class App extends React.Component {
 	 }
 	 getUsers () {
 	 	$.ajax({
-	 		url : '/api/users' , 
+	 		url : '127.0.0.1:8888/users' , 
 	 		type : 'GET',
 	 		success : function(users) {
 	 			for (var user of users) {
@@ -26,7 +26,7 @@ class App extends React.Component {
 	 		email : $('#email').val()
 	 	};
 	 	$.ajax({
-	 		url : '/api/users' , 
+	 		url : '127.0.0.1:8888/users' , 
 	 		type : 'POST',
 	 		data :  obj,
 	 		success : function(users) {
@@ -42,7 +42,7 @@ class App extends React.Component {
 	 		id : $('#ID').val(),
 	 	};
 	 	$.ajax({
-	 		url : '/api/users' , 
+	 		url : '127.0.0.1:8888/api/users' , 
 	 		type : 'GET',
 	 		data :  obj,
 	 		success : function(user) {
