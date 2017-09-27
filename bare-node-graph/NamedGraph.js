@@ -2,7 +2,7 @@ var Graph = require('./Graph.js');
 
 var NamedGraph = function (adjacencyListPath, name) {
 	this.nodes;
-	this.name;
+	this.name=name
 	this.numberOfNodesTimeComplexity = "O(n)";
 	this.getEdgesTimeComplexity = "O(n)";
 	this.numberOfEdgesTimeComplexity="O(n)"
