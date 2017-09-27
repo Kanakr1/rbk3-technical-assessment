@@ -38,13 +38,43 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+  var targetUser = 'invalid id';
+  _.each (users, (ele, i) => {
+    if (ele.id == id){ // check if the current user id is equal to the gevin id
+      targetUser = ele;
+      return;
+    }
+  });
+  return targetUser;
 };
 
 exports.addOne = function (user) {
+  newUser = {
+    id: getNextId (),
+    name: user.name,
+    email: user.email
+  };
+  users.push(newUser);
+
+  return newUser;
 };
 
 exports.updateOne = function (id, newProperties) {
+  var status = 'invalid id'
+  _.each (users, (ele, i)=>{
+    if (ele.id == id)
+    {
+      users[i] = newProperties;
+      status = 'User updated'
+    }
+  });
 };
 
 exports.deleteOne = function (id) {
+  var deletedUser = 'invalid id';
+  _.each (users, (ele, i)=>{
+    if(ele.id === id)
+      deletedUser = users.splice(i, 1);
+  });
+  return deletedUser;
 };

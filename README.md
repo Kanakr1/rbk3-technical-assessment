@@ -1,6 +1,6 @@
 # Welcome to your assessment  
 
-Are you ready to put your skills to the test and have some full stack hacking fun? This assessment will be like a day-long solo sprint where you get use the skills and technologies you have worked with during the first half of the course. 
+Are you ready to put your skills to the test and have some full stack hacking fun? This assessment will be like a day-long solo sprint where you get use the skills and technologies you have worked with during the first half of the course.
 
 ### Don'ts
 
@@ -26,14 +26,14 @@ This assement is designed to test what you have learned over the last 6 weeks.
 1. Check there’s no previous git config
 `git config user.name`
 `git config user.email`
-2. If there’s a config you need to remove it: 
+2. If there’s a config you need to remove it:
 `git config --global --unset user.name "previous_name"`
 `git config --global --unset user.email previous_email`
 3. Now you need to add your config:
 `git config --global  user.name "your_name"`
 `git config --global  user.email your_email`
 4. open keychain, and check if there is any github account, and delete it.
-5. Now you can fork, clone and commit safely. 
+5. Now you can fork, clone and commit safely.
 
 Assessments are meant to give you and RBK staff an idea of how well you understand, or can figure out, the material that you covered recently.
 
@@ -55,7 +55,7 @@ Assessments are meant to give you and RBK staff an idea of how well you understa
 This Assesment is split into 4 different parts. Each part is in each own folder and has it's own README file. Please read this README first, then refer to the README for each section. Each README has it's own rules on what resources you are allowed to use. At no point are you allowed to use your prior sprint code, work with any partner or look at your neighbors code. Cheaters will be removed!
 
 
-We believe this is a worthy challenge for you! 
+We believe this is a worthy challenge for you!
 
 # Directions
 0) Read the entire directions!!!
@@ -67,13 +67,13 @@ We believe this is a worthy challenge for you!
     4) Bare-Node-Graph
 
 
-    Use your time wisely, we expect you to be pushing code starting at 4pm! While you must work in order, you do not need to be 100% done before going to the next section. In fact we expect you to have work on each section! 
+    Use your time wisely, we expect you to be pushing code starting at 4pm! While you must work in order, you do not need to be 100% done before going to the next section. In fact we expect you to have work on each section!
 
 3) You must manage your time effectively to complete this assessment. This assessment will be evaluated as if it was a coding challenge given to you as part of a job application process. Not only will the functionality of your code be important, but also, the professionalism with which you write it. Consider the style and organization of your code. Make frequent commits with informative and consistent commit messages. Be professional and informative with your comments.
 
 4) When you are done, or starting at 4pm please push your code, and make a pull request.
-5) You may continue working til 4:30 pm, but the last pull request we will not accept any pull requests 4:31 pm or later. 
-6) At 4:30, flash drives will be distrubted 
+5) You may continue working til 4:30 pm, but the last pull request we will not accept any pull requests 4:31 pm or later.
+6) At 4:30, flash drives will be distrubted
 .
 
 ## How to Record Your Screen
@@ -145,3 +145,5 @@ We recommend [SimpleScreenRecorder](http://www.maartenbaert.be/simplescreenrecor
 
 
 Good Luck :)
+
+THANK YOU

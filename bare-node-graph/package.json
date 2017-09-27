@@ -1,5 +1,14 @@
 {
   "scripts": {
     "test": "mocha --require ../node_modules/babel-core/register test"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "chai-things": "^0.2.0",
+    "fs": "0.0.1-security",
+    "test": "^0.6.0",
+    "underscore": "^1.8.3"
   }
 }
