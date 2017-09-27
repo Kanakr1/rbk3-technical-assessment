@@ -13,7 +13,7 @@ mongoose.connect(mongoURI,{useMongoClient: false});
 
 db.on('error',function(){
 	console.log("ERROR !!!!")
-}).once('open', function(){
+}).once('openUri', function(){
 	console.log("SUCCESSFUL !!!!")
 })
 

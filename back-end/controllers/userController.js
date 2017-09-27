@@ -1,17 +1,18 @@
 var User = require('../models/User');
 // Given the name of a user, retrieve their record from the database
 exports.getUserByName = function (name, callback) {
-  User.findOne({"name":name}, function (error,user) {
+  User.findOne({name:name}, function (error, user) {
   	if(error){
   		throw error
   	}
   	callback(null , user);
+    db.close()
   })
 };
 
 // Given the name of a user, update their `email` property
 exports.updateEmailByName = function (name, newEmail, callback) {
-   User.findOne({"name":name}, function (error,user) {
+   User.findOne({name:name}, function (error,user) {
   	if(error){
   		throw error
   	}

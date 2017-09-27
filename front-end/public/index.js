@@ -1,24 +1,37 @@
-var $http = require("http")
-
 class App extends React.Component{
 	constructor(props){
 		super(props)
 	
 
 	this.state = {
-		user : ""
+		userId : ""
 	}
 }
 
 handleChange(event){
 	this.setState = {
-		user :event.target.user
+		userId :event.target.userId
 	}
 
 	$.ajax({
 		method : 'POST',
-		url : "http://localhost:3000",
+		url : "http://localhost:3000/api/users",
 		data : this.state.user
+			success : function(){
+			console.log("SUCESS !!!")
+		},
+		error: function(){
+			console.log("ERROR !!!")
+		}
+
+		})
+}
+
+getUser(){
+	$.ajax({
+		method : 'GET',
+		url : "http://localhost:3000/api/users/:id",
+		data : this.state.userId
 			success : function(){
 			console.log("SUCESS !!!")
 		},
@@ -32,7 +45,7 @@ handleChange(event){
 showUsers(callback) {
  $.ajax({
 		method : 'GET',
-		url : "News.aspx/GetNewsContent",//news API
+		url : "http://localhost:3000/api/users",
 		contentType: "application/json",
 		success : function(data){
 			callback(data)
@@ -49,8 +62,9 @@ showUsers(callback) {
 render () {
 	return (
 		<div>
-		ADD USER : <input type = "text"  value = {this.state.user}. onChang = {this.handleChange}>
-		VIEW USER <input type = "submit" value = {this.showUsers}>
+		ADD USER ID : <input type = "text"  value = {this.state.user} onChange = {this.handleChange}>
+		VIEW USER 	: <input type = "submit" value = {this.showUsers}>
+
 		</div>
 		)
 }
