@@ -5,7 +5,7 @@ var NamedGraph = function (adjacencyListPath, name) {
 	this.name = name;
 };
 
-NamedGraph.prototype = Object.create(Graph);
+NamedGraph.prototype = Object.create(Graph.prototype);
 NamedGraph.prototype.constructor = NamedGraph;
 
 

@@ -7,19 +7,19 @@ var fs = require('fs');
 // It will also make your code much easier to read and write.
 
 // HINT: Each line in the adjacency list is separated by newline character (`\n`).
-
+fs.readFileSync("NamedGraph.js");
 var Graph = function (adjacencyListPath) {
   // Structure the graph in JavaScript in a way that will be of service to you
   this.nodes;
 
   // String with your claim of the time complexity for `numberOfNodes`
-  this.numberOfNodesTimeComplexity = undefined;
+  this.numberOfNodesTimeComplexity = "O(1)";
 
   // String with your claim of the time complexity for `getEdges`
-  this.getEdgesTimeComplexity = undefined;
+  this.getEdgesTimeComplexity = "O(n)";
 
   // String with your claim of the time complexity for `numberOfEdges`
-  this.numberOfEdgesTimeComplexity = undefined;
+  this.numberOfEdgesTimeComplexity = "O(1)";
 
 };
 
