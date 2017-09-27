@@ -58,12 +58,25 @@ Graph.prototype.getEdges = function (node) {
 
 // Returns the number of edges for the graph.
 Graph.prototype.numberOfEdges = function () {
-	//make a counter
-	var counter=0;
-	//we have to search over all the node lines to take the last element and first element 
-	//when we find an element we increment the counter
-	//return the counter
-	return counter;
+	
+	//edges are number of the columns in the graph
+	//consider each node raw as an array and search each node 
+	//to find the last index of this node
+	//the largest index will give us the # of edges 
+	for(var i=0; i<n.length; i++){
+		for(var j=0; j<n[i].length; j++){
+			var max=0;
+			if(i<max){
+				max=max;
+			}
+			else{
+				max=i;
+			}
+		}
+	}
+	
+	 
+	return max;
 };
 
 module.exports = Graph;
