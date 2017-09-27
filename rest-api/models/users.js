@@ -51,35 +51,17 @@ exports.getOne = function (id) {
 exports.addOne = function (user) {
   users.push(user)
 };
-// i dont know how many inputs the user wants to update 
-// i will store the properties  in an array
-// also im not sure in which order will the user input data
-//i wll search each argument for @ symbol
-// if @ is found the argument is the email
+// i did sth stupid that turned out to be wrong and moved it to the bottom of the page
+// newProperties is an object with one or two keys
+// loop to find the id then chage the parameters
 exports.updateOne = function (id, newProperties) {
-array = arguments
-var id = array[0];
-var x = array[1];
-var y = array[2];
-var email;
-var name;
-if(x.indexOf('@') > -1 && x.indexOf('.com')> -1){
-// x is not the email then y is
-email = y
-name = x
-}else{
-// x is the email then y is name
-email = x
-name = y  
-}
-// find the user and change the properties 
-for (var i = 0; i < users.length; i++) {
+  for (var i = 0; i < users.length; i++) {
   if (users[i].id===id) {
-    user[i].name = name;
-    user[i].email = email;
-    return user[i] 
+    users[i].name = newProperties.name 
+    users[i].email = newProperties.email
+    return users[i]
   }  
-}
+  }
 
 };
 
@@ -90,3 +72,34 @@ exports.deleteOne = function (id) {
   }  
   }
 };
+
+
+
+// i dont know how many inputs the user wants to update 
+// i will store the properties  in an array
+// also im not sure in which order will the user input data
+//i wll search each argument for @ symbol
+// if @ is found the argument is the email
+// array = arguments
+// var id = array[0];
+// var x = array[1];
+// var y = array[2];
+// var email;
+// var name;
+// if(x.indexOf('@') > -1 && x.indexOf('.com')> -1){
+// // x is not the email then y is
+// email = y
+// name = x
+// }else{
+// // x is the email then y is name
+// email = x
+// name = y  
+// }
+// // find the user and change the properties 
+// for (var i = 0; i < users.length; i++) {
+//   if (users[i].id===id) {
+//     user[i].name = name;
+//     user[i].email = email;
+//     return user[i] 
+//   }  
+// }

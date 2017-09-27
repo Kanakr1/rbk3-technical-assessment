@@ -31,6 +31,7 @@ app.get('/api/users/:id', function(req, res){
 });
 
 // for put we need to update 
+// params is used to fetch is from url
 app.put('/api/users/:id', function(req, res){
 	id = req.params.id;
  	parameters = JSON.parse(req.body);
@@ -42,7 +43,7 @@ app.delete('/api/users/:id', function(req, res){
 	id = req.params.id;
 	user = Users.getOne(id)
 	Users.deleteOne(id)
-	res.send(users)
+	res.send(JSON.stringify(users))
 });
 
 // Do not touch this invocation of the `listen` method
