@@ -27,7 +27,14 @@ var jobSchema = new Schema({
 
 var Job = mongoose.model('Job', jobSchema);
 
-module.exports.Job;
+// mongoose.connect('http://localhost', 'gettingstarted');
+// var connection = mongoose.createConnection('mongodb://localhost/jobquery');
+// var Job = connection.model('Job', jobSchema);
+
+module.exports = mongoose.model('Job', jobSchema);
+
 
 //write the connection (copy & paste from user file)
 //test doesn't run yet
+
+//DONE

@@ -1,52 +1,59 @@
-//- Write a `User` Mongoose model
-// - [ ] Look at the `exampleUser` object in `models/User.js`
-//   - It reflects the structure of the data you would like to persist for your users
-// - [ ] Inside `models/User.js`, use `mongoose` to create and export a `User` Mongoose model that has a schema that would handle an object with the same structure and keys as the `exampleUser` object already written
-// - [ ] Ensure all of the `User Model` tests pass (`npm test` inside this problem's directory to run the tests)
+//TODO:
+		//- Write a `User` Mongoose model
+		// - [ ] Look at the `exampleUser` object in `models/User.js`
+		//   - It reflects the structure of the data you would like to persist for your users
+		// - [ ] Inside `models/User.js`, use `mongoose` to create and export a `User` Mongoose model that has a schema that would handle an object with the same structure and keys as the `exampleUser` object already written
+		// - [ ] Ensure all of the `User Model` tests pass (`npm test` inside this problem's directory to run the tests)
 
 // TODO: Create and export a mongoose model called `User` whose schema would handle an object like `exampleUser`
-// var exampleUser = {
-//   name: 'Taka',
-//   email: 'taka@taka.com'
-// };
+		// var exampleUser = {
+		//   name: 'Taka',
+		//   email: 'taka@taka.com'
+		// };
 
 //don't forget to install mongoose 
-//npm install mongoose
-// "dependencies": {"mongoose": "^4.11.13"}
+		//npm install mongoose
+		// "dependencies": {"mongoose": "^4.11.13"}
 
-//the test also need chai 
-//$ npm install chai 
+		//the test also need chai 
+		//$ npm install chai 
 
 // Defining your schema
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+		var mongoose = require('mongoose');
+		var Schema = mongoose.Schema;
 
-var userSchema = new Schema({
-  name:  String,
-  email: String
-  // there is no id in the example so I will not write it 
-});
+		var userSchema = new Schema({
+		  name:  String,
+		  email: String
+		  // there is no id in the example so I will not write it 
+		});
 
 // Creating a model
 
-var User = mongoose.model('User', userSchema);
+		// mongoose.model('User', userSchema);
+		var User = mongoose.model('User', userSchema);
 
-//Connections
+//Connections 
 
-// mongoose.connect('localhost', 'gettingstarted');
+		// db = mongoose.connection;
 
-// var connection = mongoose.createConnection('mongodb://localhost:27017/test'); // modefy this 
+		// mongoose.connect('mongodb://localhost/jobquery');
 
-// var User = connection.model('User', userSchema);
+		// var connection = mongoose.createConnection('mongodb://localhost/jobquery'); // modefy this 
+
+		// var User = connection.model('User', userSchema);
 
 //Export. error in the way of writting the export
 
-// export default User;
-// export User = new User();
-// export default class {}
+		// export default User;
+		// export User = new User();
+		// export default class {}
+		// module.exports.User;
 
-module.exports.User;
+		module.exports = mongoose.model('User', userSchema);
+
+
 
 // run the test inside models 
 //  mocha UserTest.js 
@@ -59,4 +66,7 @@ module.exports.User;
  //     AssertionError: expected undefined to exist
  //      at Context.<anonymous> (UserTest.js:12:27)
 
- //test doesn't run yet
+ //test doesn't run yet 
+ //the problem was in the export syntacs 
+
+ // DONE
