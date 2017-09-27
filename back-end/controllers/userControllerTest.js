@@ -54,16 +54,34 @@ describe('User Controller', function () {
   it('should have a method that given the name of a user, retrieves their record from the database', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+    expect(exports.getUserByName).to.exist;
+    expect(exports.getUserByName('Sunny',done)).to.({
+          name: 'Sunny',
+          email: 'sunny@sunny.com'
+        });
+ 
   });
 
   it('should have a method that given the name of a user, updates their `email` property', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+     expect(exports.updateEmailByName).to.exist;
+    expect(exports.updateEmailByName(("Sunny", 'Sunny@gmail.com', done))).to.({
+          name: 'Sunny',
+          email: 'Sunny@gmail.com'
+        });
   });
 
   it('should have a method that reads all users from the database at once', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+        expect(exports.readAllUsers).to.exist;
+    expect(exports.readAllUsers(done)).to.true;
   });
 
 });
+
+  // I dont know if my test correct or not
+  //but I hope that 
+  // I know that I should implement a false casese , but I need more time for next 
+  // section of assesment

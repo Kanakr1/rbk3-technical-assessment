@@ -38,13 +38,37 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+  Users.find({id:id}, function(err,user){
+      if(err){
+       console.log('bad Data :'+ err) 
+      } else {
+        return user
+      }
+
+    })
+
 };
 
 exports.addOne = function (user) {
+ Users.createUser({
+     user:user
+   })
+    return user
 };
 
 exports.updateOne = function (id, newProperties) {
+     var query = { id: id };
+ users.findOneAndUpdate(query, { email: newProperties }, function(err,user){
+    if(err){
+      console.log('this user not found': err)
+    } else{
+      return user
+    }
+ })
+
 };
 
 exports.deleteOne = function (id) {
+    
+    Users.test_users.remove( {"_id": id});
 };
