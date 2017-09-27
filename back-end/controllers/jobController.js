@@ -3,8 +3,13 @@ var job = require(../models/jobs)
 exports.createJob = function (job, callback) {
   // TODO
   var newJob = new job ({
-  	
+  	company : "RBK" , 
+	title : "HIR",
+	description :"Teacher",
+	postedDate : "2017-03-21",
+	salary : 600
   })
+  return callback()
 };
 
 // Get all jobs that have a salary greater than $50,000

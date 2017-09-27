@@ -2,8 +2,11 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost');
 var jobSchema = new mongoose.schema({
-	name : String , 
-	id : Number 
+	company : String , 
+	title : String,
+	description :String,
+	postedDate : Date,
+	salary : Number
 })
 
 var job = mongoose.model('chai' , jobSchema);
