@@ -24,17 +24,38 @@ describe('Job Controller', function () {
       // TODO: Seed database with some jobs to run tests against. 
     });
   });
-it('should have a method that given the name of a user, retrieves their record from the database', function (done) {
-    // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
-    // HINT: The `done` passed in is quite important...
-    var user={name: 'Zach',
-          email: 'zach@zach.com'}
-          User.create(user,done);
-    User.getUserByName(user.name,function (){
-      var user={name: 'Zach',
-          email: 'zach@zach.com'}
-          User.create(user,done);
+
+  // TODO: Write your tests for jobController here
+it('should have a method that given the the job object , save them to the database ', function (done) {
+
+
+job={company: 'New Horizon',
+          title: 'Trainer',
+          description:'Training IT courese',
+          postedDate:22-10-2015,
+          salary:15000
+        }
+         
+    Job.createJob(job,function (){
+
+          done();
     });
   });
-  // TODO: Write your tests for jobController here
-});
+
+it('should have a method that return the jobs with the salary bigger than 50000 ', function (done) {
+
+
+job={company: 'New Horizon',
+          title: 'Trainer',
+          description:'Training IT courese',
+          postedDate:22-10-2015,
+          salary:51000
+        }
+         
+    Job.getHighPayingJobs(function (){
+
+          done();
+    });
+  });
+  
+

@@ -58,22 +58,19 @@ describe('User Controller', function () {
           email: 'zach@zach.com'}
           User.create(user,done);
     User.getUserByName(user.name,function (){
-      var user={name: 'Zach',
-          email: 'zach@zach.com'}
-          User.create(user,done);
+      done();
     });
   });
 
   it('should have a method that given the name of a user, updates their `email` property', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
-    var user={name: 'Zach',
+   
+        var user={name: 'Zach',
           email: 'zach@zach.com'}
-          User.create(user,done);
+          User.create(user,done);  
     User.updateEmailByName(user.name,function (){
-      var user={name: 'Zach',
-          email: 'zach@zach.com'}
-          User.create(user,done);
+      done();
     });
    
 
@@ -102,8 +99,9 @@ describe('User Controller', function () {
           email: 'zach@zach.com'
         }
       ];
+       User.create(users,done)
       User.readAllUsers(function(){
-        User.create(users,done)
+       done();
       })
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
