@@ -37,7 +37,7 @@ describe('Job Controller', function () {
           title: 'Senior',
           describtion: 'some work',
           postedDate: 2017-09-30,
-          salary: 800
+          salary: 80000
         }
       ];
 
@@ -48,8 +48,7 @@ describe('Job Controller', function () {
 
   // TODO: Write your tests for jobController here
   it('should have a method that adds a job to the data base', function (done) {
-    // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
-    // HINT: The `done` passed in is quite important...
+
     Control.createJob({
           company: 'RBK',
           title: 'HIR',
@@ -57,8 +56,17 @@ describe('Job Controller', function () {
           postedDate: 2017-09-30,
           salary: 800
         }, function(err, data){
-      console.log(data);
+      expect(data.company).equals('RBK');
     });
+    done();
+  });
+
+  it('should have a method to choose a salary over 50,000$', function (done) {
+    Control.getHighPayingJobs(function(err, data){
+       console.log('(づ｡◕‿‿◕｡)づ Done!')
+      expect(data[0].company).equals(Google)
+
+    })
     done();
   });
 });

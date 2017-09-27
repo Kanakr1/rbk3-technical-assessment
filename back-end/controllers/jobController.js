@@ -14,8 +14,7 @@ exports.createJob = function (job, callback) {
 
   jobb.save(function(err){
   	if (err) console.log(err);
-
-    callback(jobb)
+    callback(err, jobb)
   });
 
   
@@ -25,6 +24,7 @@ exports.createJob = function (job, callback) {
 exports.getHighPayingJobs = function (callback) {
   // TODO
   Job.find({salary:  {$gt : 50000} }, function(err, data){
-  	callbalck(data)
+    if (err) console.log(err)
+  	callback(err, data)
   })
 };
