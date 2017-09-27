@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var mongoose = require('mongoose');
 var User = require('../models/User');
-var userController = require ('../controllers/userController')
+var userController = require ('./userController')
 
 
 var dbURI = 'mongodb://localhost/jobquery';
