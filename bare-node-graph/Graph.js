@@ -10,6 +10,7 @@ var fs = require('fs');
 
 var Graph = function (adjacencyListPath) {
   // Structure the graph in JavaScript in a way that will be of service to you
+
   this.nodes;
 
   // String with your claim of the time complexity for `numberOfNodes`
@@ -26,6 +27,8 @@ var Graph = function (adjacencyListPath) {
 // Returns the number of nodes in the graph
 Graph.prototype.numberOfNodes = function () {
 	var counter=0;
+	// if there is anode increament the counter 
+	// return the counter
 
 
 	return counter;
@@ -33,16 +36,16 @@ Graph.prototype.numberOfNodes = function () {
 
 // Returns an array of the edges for the passed in `node`
 Graph.prototype.getEdges = function (node) {
-	var arr=[];
+	
 // we need to find the smallest value and put it inthe first index inthearray 
 // then find the max value and put it inthe second index in the array
 // so we will find the min aand max then push in array ordinary
-	return arr[];
+	
 };
 
 // Returns the number of edges for the graph.
 Graph.prototype.numberOfEdges = function () {
-return numder
+// return numder of edge of graph
 
 
 };
