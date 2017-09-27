@@ -4,7 +4,7 @@ var user= require('../models/User.js')
 // Given the name of a user, retrieve their record from the database
 exports.getUserByName = function (name, callback) {
   // TODO
-	user.find(function(err,user){
+	User.find(function(err,user){
 		if(err){
 		console.log(err ,' : the name not found');
 		}

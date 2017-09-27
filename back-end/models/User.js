@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema= mongoose.Schema;
 var db= mongoose.connection;
 
- mongoose.connect('mongodb: //models.db')
+ mongoose.connect('mongodb: //models/User.js')
 
 var exampleUser = {
   name: 'Taka',
@@ -27,4 +27,5 @@ db.once('open',function callback(){
 var UserModel = mongoose.model('User', UserSchema);
 
 
-module.exports= User;
+///module.exports= app;
+module.exports= db;

@@ -4,7 +4,7 @@ var Schema= mongoose.Schema;
 
 var db= mongoose.connection;
 
- mongoose.connect('mongodb: //models.db')
+ mongoose.connect('mongodb: //models/Job.js')
 
 var JobSchema= new Schema ({
 	company : String,
@@ -16,9 +16,10 @@ var JobSchema= new Schema ({
 
 db.on('error',console.error.bind(console, 'connection error'));
 
-db.once('open',function callback(){
+db.once('openUri()',function callback(){
 	console.log('connect to database')
 })
 var JobModel = mongoose.model('Job', JobSchema);
 
-module.exports= db;
+//module.exports= app;
+module.exports=db;
