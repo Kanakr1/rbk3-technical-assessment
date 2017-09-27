@@ -6,6 +6,31 @@ var app = express();
 app.use(bodyParser.json());
 
 // YOUR CODE BELOW
+app.GET('/api/users',function(req,res){
+	var allusers= getAll();
+	res.send(JSON(allusers));
+})
+
+// var id = db.find({}}).where({id:req})
+app.GET('/api/users/:'+id,function(req,res){
+	var user = getOne(id)
+	res.send(JSON.parse(user))
+})
+
+app.POST('/api/users',function(req,res){
+	var x=JSON.stringify(req.body)
+	addOne(x);
+	res.send(JSON.parse(req.body));
+})
+
+app.PUT('/api/users/:'+id,function(req,res){
+	res.send(JSON.parse(updateOne(id,req.body)))
+});
+
+app.DELETE('/api/users/:'+id,function(req,res){
+	var a=deleteOne(id)
+	res.send(JSON.parse(a))
+})
 
 
 

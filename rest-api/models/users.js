@@ -38,12 +38,18 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+  return users.findOn({id : id}).exec(err,result){}
 };
 
 exports.addOne = function (user) {
+  users.push(user)
 };
 
 exports.updateOne = function (id, newProperties) {
+ var s= users.find({}).where({id: id});
+ s{
+  newProperties:''
+ }
 };
 
 exports.deleteOne = function (id) {
