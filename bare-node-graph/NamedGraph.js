@@ -1,6 +1,7 @@
 var Graph = require('./Graph.js');
 
 var NamedGraph = function (adjacencyListPath, name) {
+	this.name = name
 };
 
 
