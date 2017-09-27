@@ -1,2 +1,33 @@
 <!-- YOUR CODE HERE -->
+<!doctype html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+  </head>
+  <body>
+  	<script type="text/javascript">
+  		function($scope){
+  			$scope.users = [];
+  			$scope.addUser =function(){
+  				$scope.Users.push({name: $scope.username ,email: $scope.useremail})
+  			}
+  		}
+
+  	</script>
+
+
+  	<h1>Here is the app</h1>
+  	<div ng-app>
+  		<form>
+  			<input type="text" ng-model="username" ng-model-instant>
+  			<input type="text" ng-model="useremail" ng-model-instant>
+  			<button ng-click="addUser()">Add User</button>
+  		</form>
+  		<ul>
+  			<li ng-repeat="user in users">{{user.name}}</li>
+  		</ul>
+  		
+  	</div>
+  </body>
+</html>
 
