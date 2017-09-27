@@ -16,7 +16,7 @@ var exampleJob = {
   // - `description` -  a string (short descripton)
   // - `postedDate` - date
   // - `salary` - string
-var user = new mongoose.Schema({
+var job = new mongoose.Schema({
   company: String,
   title: String,
   description: String,
@@ -24,6 +24,6 @@ var user = new mongoose.Schema({
   salary: Number
 });
 
-var user = mongoose.model('user', user);
+var job = mongoose.model('job', job);
 
-module.exports = user;
+module.exports = job;
