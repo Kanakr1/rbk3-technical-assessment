@@ -8,7 +8,20 @@
 			<script src = "app.js"></script>
 		</head>
 		<body>
-			<div ng-view></div>
+			<h2>Please Enter the User Information</h2>
+			<div ng-controller = "addUser">	
+				<form ng-controller = "addUser"> <!-- this controller will perform the needed task on the values that are submitted -->
+					<br>
+					<label>Name:</label>
+					<input type="text" name="name" placeholder="Please Enter Full Name" ng-model="name">
+					<br> <br>
+					<label>Email:</label>
+					<input type="text" name="email" placeholder="Please Enter Email" ng-model="email">
+					<br><br>
+					<input type="submit" value="Submit" ng-click = "submit()">
+					
+				</form>
+			</div>	
 
 		</body>
 	</html>
