@@ -2,6 +2,9 @@
 // Given the name of a user, retrieve their record from the database
 exports.getUserByName = function (name, callback) {
   // TODO
+  // it('it shoud take a name',function(){
+
+  })
 };
 
 // Given the name of a user, update their `email` property
