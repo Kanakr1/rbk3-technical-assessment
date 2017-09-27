@@ -65,10 +65,12 @@ exports.updateOne = function (id, newProperties) {
      if(key === "name"){
           obj.name === newProperties.name;
      }
+   }
+   for(key in newProperties){
      if(key === "email"){
       obj.email === newProperties.email;
       }
-    }
+    }}
      return obj;
 };
 
