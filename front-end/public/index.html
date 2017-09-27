@@ -1,2 +1,94 @@
-<!-- YOUR CODE HERE -->
+<!-- 
+|       URL      | HTTP Verb | POST Body |                   Result                      |
+| /api/users     |    GET    |   empty   |                      Return JSON of all users |
+| /api/users     |    POST   |    JSON   |                               Create new user |
+| /api/users/:id |    GET    |   empty   | Return JSON of single user with matching `id` |
+ -->
 
+<!-- Your front end should allow the user to add new users, and view current users -->
+
+<!-- YOUR CODE HERE -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+
+	<script src="jquery-3.2.1.min.js"></script>
+
+</head>
+<body>
+	<div id='app'></div>
+	<form action="/" method="GET">
+		<p>
+			show all the users
+		</p>
+	</form>
+
+	<form action="/users" method="POST">
+		<input type="text" name="newuser">
+		<button id= "newuser">submit</button>
+	</form>
+
+	<form action="/users/:id" method="GET">
+		<input type="text" name="newuser">
+		<button>submit</button>
+	</form>
+
+	<script type="text/javascript">
+		//create class 
+		var app = {
+			init: function(){
+				server: "http://localhost",
+				username: "your name",
+
+				var $newuser = $("#newuser");
+
+				fetch()
+			},
+
+			fetch: function(){
+				$.ajax({
+					url: app.server,
+					type: "GET",
+					success: function(data){
+						console.dir(data);
+					},
+					error: function(err){
+						console.error(err)
+					}
+
+				})
+			},
+
+			send: function(data){
+				$.ajax({
+					url: app.server,
+					type: "GET",
+					data: {content: 'applicatio/JSON'}
+					success: function(data){
+						console.dir(data);
+						//parse for the data
+						//collect the data
+						//render the data
+					},
+					error: function(err){
+						console.error(err)
+					}
+				})
+			}
+		}
+
+		//init function contain sever, username, $ for the element that I have in html page, call fetch function, and listenTO to listen to the click and then active the send function
+		//fetch func. has $.ajax with method get that will send a req with empty body to get to me all the users
+		//send funct. has  $.ajax with method post with body have the data that I want to save in the array but after apply JSON.stringfy in it
+		//render function to show the data that I reseved from the server on the DOM for the client
+
+		//set collection.set(models, [options]) 
+		//get collection.get(id) 
+
+	</script>
+
+</body>
+</html>
