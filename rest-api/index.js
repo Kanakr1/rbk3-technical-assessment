@@ -3,8 +3,7 @@ var bodyParser = require('body-parser');
 var Users = require('./models/users');
 
 var app = express();
-app.use(bodyParser.json());
-
+app.use(bodyParser.urlencoded({extended : true}))
 // YOUR CODE BELOW
 
 

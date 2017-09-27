@@ -1,4 +1,5 @@
-
+var mongoose = require('mongoose') ;
+var user = require('../models/user.js')
 // Given the name of a user, retrieve their record from the database
 exports.getUserByName = function (name, callback) {
   // TODO
