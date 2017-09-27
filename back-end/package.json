@@ -1,5 +1,10 @@
 {
   "scripts": {
     "test": "mocha --require ../node_modules/babel-core/register models/UserTest.js models/JobTest.js controllers/userControllerTest.js controllers/jobControllerTest.js"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "mongoose": "^4.11.13"
   }
 }
