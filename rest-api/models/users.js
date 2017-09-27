@@ -53,4 +53,5 @@ exports.updateOne = function (id, newProperties) {
 };
 
 exports.deleteOne = function (id) {
+  
 };
