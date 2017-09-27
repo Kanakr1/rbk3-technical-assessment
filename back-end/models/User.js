@@ -16,7 +16,7 @@ var User = mongoose.Schema({
     name: String,
     email:String
 });
-//var User = mongoose.model('User', UserSchema);
+
 
 module.exports = mongoose.model('User', User);
 
