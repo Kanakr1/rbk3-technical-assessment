@@ -1,2 +1,27 @@
 <!-- YOUR CODE HERE -->
+<!DOCTYPE html>
+<html ng-app="userApp">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+	<script src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+	<div>
+		<label>Name:</label>
+		<br>
+		<input type="text" ng-model="userName" placeholder="User Name Here">	
+	</div>
+	<form ng-submit="usersList.addUser()">
+		<input type="text" ng-model="usersList.user" placeholder="add new user here">
+		<input class="btn-primary" type="submit" value=add>	
+	</form>
+	<div>
+		<li ng-repeat="user in usersList.users">
+			
+		</li>	
+		</div>
+	</body>
+	</html>
 
