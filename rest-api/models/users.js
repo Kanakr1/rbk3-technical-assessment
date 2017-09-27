@@ -1,6 +1,5 @@
 var _ = require('underscore');
 
-// The seeded state of our in-memory "database"
 var users = [
   {
     id: 1,
@@ -36,15 +35,31 @@ exports.setAll = function (newUsers) {
   nextId = newUsers.length + 1;
   return newUsers;
 };
-
+// this helper function should get the user given its id
+// my function loops through the array of users
+// when i find the user with the given id
+// i return the user (object)
 exports.getOne = function (id) {
+  for (var i = 0; i < users.length; i++) {
+    if (users[i].id===id) {
+      return user[i]
+    }
+  }
 };
-
+//this user is an object so i will only push it
+// no user creation here
 exports.addOne = function (user) {
+  users.push(user)
 };
 
 exports.updateOne = function (id, newProperties) {
+
 };
 
 exports.deleteOne = function (id) {
+  for (var i = 0; i < users.length; i++) {
+  if (users[i].id===id) {
+    
+  }  
+  }
 };
