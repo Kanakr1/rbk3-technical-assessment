@@ -23,19 +23,23 @@ app.post('/api/users', function (req, res) {
   //console.log(user)
 })
 
-app.get('/api/users/', function (req, res) {
+app.get('/api/users/:id', function (req, res) {
 	id=req.query;
 	id=id.id;
 	user=Users.getOne(id);
-	console.log(user);
+	//console.log(user);
   res.status(200).send(JSON.stringify(user));
 });
 
 app.put('/api/users/:id', function (req, res) {
-	id=req.query.id;
-	id=id.id;
-	user=Users.updateOne(id);
-    res.send('PUT request to homepage');
+	id=req.body.id;
+	user=Users.getOne(id);
+    res.send(JSON.stringify(user));
+});
+app.delete('/api/users/:id', function (req, res) {
+	id=req.body.id;
+	user=Users.getOne(id);
+    res.send("user deleted");
 });
 
 // Do not touch this invocation of the `listen` method
