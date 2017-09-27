@@ -38,6 +38,7 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+  
 };
 
 exports.addOne = function (user) {
