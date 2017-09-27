@@ -7,29 +7,27 @@
 </head>
 <body>
 <script type="text/javascript" src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
-<div ng-controller="myApp">
 	<table>
 		<thead>
 			<tr>
 				<th>user name</th>
-				<th> email</th>
+				<th>email</th>
 			</tr>
 
 		</thead>
 		<tbody>
 			<tr>
-				<td><input  ng-model="input.user"></td>
-				<td><input ng-model="input.email"></td>
+				<td><input  ng-model="input.users.username"></td>
+				<td><input ng-model="input.users.email"></td>
 				<td><button ng-click=add()>click To Add User</button></td>
 			</tr>
-			<tr>
-				
+			<tr ng-repeat="user in users">
+				<td>{{user.username}}</td>
+				<td>{{user.email}}</td>
 			</tr>						
 		</tbody>
 	</table>
-<!-- 				<ul ng-repeat="user in users">
-					<li>{{user}}</li>
-				</ul> -->
 </div>
+<script type="text/javascript" src="hiba.js"></script>
 </body>
 </html>
