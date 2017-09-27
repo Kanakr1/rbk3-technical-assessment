@@ -25,14 +25,18 @@ var Graph = function (adjacencyListPath) {
 
 // Returns the number of nodes in the graph
 Graph.prototype.numberOfNodes = function () {
+	// here i weant to return the length of the
+	// Object.keys() it's  === to number of nodes
 };
 
 // Returns an array of the edges for the passed in `node`
 Graph.prototype.getEdges = function (node) {
+	//
 };
 
 // Returns the number of edges for the graph.
 Graph.prototype.numberOfEdges = function () {
+	// number of edges = number of nodes - 1 ;
 };
 
 module.exports = Graph;
