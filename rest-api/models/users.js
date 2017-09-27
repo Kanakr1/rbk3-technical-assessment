@@ -1,4 +1,5 @@
 var _ = require('underscore');
+var express = requir('express')
 
 // The seeded state of our in-memory "database"
 var users = [
@@ -38,13 +39,18 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+  return users[id-1]
 };
 
 exports.addOne = function (user) {
+  users[nextId] = user ;
 };
 
 exports.updateOne = function (id, newProperties) {
+   users[id-1][newProperties]
+   return users[id-1]
 };
 
 exports.deleteOne = function (id) {
+  users.splice(users[id-1])
 };
