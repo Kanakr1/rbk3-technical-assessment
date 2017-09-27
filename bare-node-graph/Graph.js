@@ -13,26 +13,38 @@ var Graph = function (adjacencyListPath) {
   this.nodes;
 
   // String with your claim of the time complexity for `numberOfNodes`
-  this.numberOfNodesTimeComplexity = undefined;
+  this.numberOfNodesTimeComplexity = o(n *n);
 
   // String with your claim of the time complexity for `getEdges`
-  this.getEdgesTimeComplexity = undefined;
+  this.getEdgesTimeComplexity = O(n);
 
   // String with your claim of the time complexity for `numberOfEdges`
-  this.numberOfEdgesTimeComplexity = undefined;
+  this.numberOfEdgesTimeComplexity = O(1);
 
 };
 
 // Returns the number of nodes in the graph
 Graph.prototype.numberOfNodes = function () {
+	var counter=0;
+
+
+	return counter;
 };
 
 // Returns an array of the edges for the passed in `node`
 Graph.prototype.getEdges = function (node) {
+	var arr=[];
+// we need to find the smallest value and put it inthe first index inthearray 
+// then find the max value and put it inthe second index in the array
+// so we will find the min aand max then push in array ordinary
+	return arr[];
 };
 
 // Returns the number of edges for the graph.
 Graph.prototype.numberOfEdges = function () {
+return numder
+
+
 };
 
 module.exports = Graph;
