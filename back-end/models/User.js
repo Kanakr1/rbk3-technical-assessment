@@ -9,11 +9,11 @@ const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 mongoose.connect('mongodb://localhost/Jobs');
 
-var JobSchema = new Schema({
+var UserSchema = new Schema({
   name: String,
   emain: String
 });
 
-var Job = mongoose.model('Job', JobSchema);
+var User = mongoose.model('User', UserSchema);
 
-module.exports = Job;
+module.exports = User;
