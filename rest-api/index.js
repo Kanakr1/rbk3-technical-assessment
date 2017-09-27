@@ -6,7 +6,11 @@ var app = express();
 app.use(bodyParser.json());
 
 // YOUR CODE BELOW
-
+app.use(function (req, res) {
+  res.setHeader('Content-Type','users')
+  res.write('you posted:\n')
+  res.end(JSON.stringify(req.body, null, 2))
+});
 
 
 // Do not touch this invocation of the `listen` method

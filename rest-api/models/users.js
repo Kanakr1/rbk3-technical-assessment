@@ -38,13 +38,22 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+  db.test.find({"mhd._id": ObjectId("id")},
+    {"mhd.$": true})
 };
 
 exports.addOne = function (user) {
+  db.col.update(user);
+    // { name: 'doc', 'list.id': 2 }, 
+    // {$push: {'list.$.items': {id: 5, name: 'item5'}}}
 };
 
 exports.updateOne = function (id, newProperties) {
+  users.update({"id"},{$set:{"newProperties"}})
+
 };
 
 exports.deleteOne = function (id) {
+  users.remove( {"_id": ObjectId("id")});
+
 };
