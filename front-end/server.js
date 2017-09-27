@@ -2,12 +2,9 @@ var express = require('express');
 var fs=require('fs');
 var bodyParser = require('body-parser')
 var app=express();
-var mongoose=require('mongoose');
-var  mongo = require('/../back-end/models/User.js');
 
 app.use(express.static(__dirname+"/"));
 app.use(express.static(__dirname+"/html"));
-app.use(express.static(__dirname+"/../back-end/models/"));
 
 
 app.use(bodyParser.urlencoded());
