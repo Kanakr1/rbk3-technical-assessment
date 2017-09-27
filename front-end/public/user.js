@@ -44,5 +44,5 @@ app.get('/api/users/:id', function(req, res){
 
 });
 
-server.listen(port);
+app.listen(port);
 console.log("Listening ...")
