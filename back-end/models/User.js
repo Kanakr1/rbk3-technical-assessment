@@ -10,8 +10,8 @@ db.once('open', function() {
 
 
 var userScheme = mongoose.Schema({
-  name: 'Taka',
-  email: 'taka@taka.com'
+  name: String,
+  email: String
 });
 
 var User = mongoose.model('User',jobSchema);
