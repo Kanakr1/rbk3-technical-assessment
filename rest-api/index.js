@@ -14,29 +14,35 @@ app.get('/api/users', function (req , res) {
 //api/users  |  POST | Create new user* and return JSON of new user 
 app.post('/api/users', function (req , res) {
   console.log('post "api/users"');
-  Users.setAll(req.body);
-  res.send(Users.getAll());
+  console.log('added use : ' , Users.addOne(req.body));
+  res.status(201).send('created');
 })
 
 
 //api/users/:id | GET | Return JSON of single user with matching `id` 
-app.get('/api/users/:id', function (req , res) {
-  console.log('get "api/users/:id"');
-  res.send(getOne(req.body));
+app.get('/api/users/*', function (req , res) {
+  var id = parseInt(req.url.slice(req.url.lastIndexOf('/')));
+  console.log('get "api/users/:id"', id);
+  var found =  Users.getOne(id);
+  res.send(found);
 })
 
 
 //api/users/:id | PUT |  Update user** with matching `id` and return JSON of user
-app.put('/api/users/:id', function (req , res) {
-  console.log('PUT "api/users/:id"');
-  var changing ;
-
+app.put('/api/users/*', function (req , res) {
+  var id = parseInt(req.url.slice(req.url.lastIndexOf('/')));
+  console.log('PUT "api/users/:id"' , id);
+  console.log(id , req.body)
+  res.send(Users.updateOne(id, req.body));
 })
 
 
 //api/users/:id | DELETE |  Delete user with matching `id` and return JSON of user
-app.delete('/api/users/:id', function (req , res) {
-	console.log('DELETE "api/users/:id"')
+app.delete('/api/users/*', function (req , res) {
+  console.log('DELETE "api/users/:id"');
+  var id = parseInt(req.url.slice(req.url.lastIndexOf('/')));
+  res.send(Users.deleteOne(id));
+  console.log('done')
 })
 
 
