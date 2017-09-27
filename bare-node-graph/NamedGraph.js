@@ -2,7 +2,6 @@ var Graph = require('./Graph.js');
 
 var NamedGraph = function (adjacencyListPath, name) {
 	Graph.call(this);
-	super(this);
 
 	this.name = name;
 

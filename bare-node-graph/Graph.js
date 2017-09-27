@@ -7,16 +7,22 @@ var fs = require('fs');
 // It will also make your code much easier to read and write.
 
 // HINT: Each line in the adjacency list is separated by newline character (`\n`).
-
+ 
 var Graph = function (adjacencyListPath) {
   // Structure the graph in JavaScript in a way that will be of service to you
-  this.obj = {}
-  fs.readFileSync('./adjacency_lists/basic').toString().split('\n').forEach(function(line){
-  	var array = JSON.parse("[" + line + "]");
-  	this.obj[array[0]] = array;
-  	array = [];
-  })
+	var obj = {};
+ var array = fs.readFileSync('adjacency_lists/basic','utf8').toString().split('\n');
+ array.forEach(function(ele){
+ 	obj[ele[0]] = ele;
+ })
+ 
 
+  // .forEach(function(line){
+  // 	var array = line;
+ 
+  // 	array = [];
+  // })
+// Object.keys(obj)
   this.nodes = Object.keys(obj);
   // String with your claim of the time complexity for `numberOfNodes`
   this.numberOfNodesTimeComplexity = 'O(1)';
