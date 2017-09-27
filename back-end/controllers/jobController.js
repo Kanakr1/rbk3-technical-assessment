@@ -1,3 +1,5 @@
+var mongoose = require('mongoose');
+var job= require('../models/Job.js')
 
 // Create a new job in the database
 exports.createJob = function (job, callback) {
