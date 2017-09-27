@@ -14,8 +14,8 @@ exports.createJob = function (job, callback) {
 // Get all jobs that have a salary greater than $50,000
 exports.getHighPayingJobs = function (callback) {
   // TODO
-  User.find()
+  Job.find({'salary': { $gt: 50000}});
 };
 
 
-//a mistake happened where i commited the entire assessment file with the comment "secon change back-end", i only ment it for the back-end file
+//a mistake happened where i commited the entire assessment file with the comment "secon change back-end", i only ment it for the back-end file.
