@@ -1,5 +1,8 @@
 {
   "scripts": {
     "test": "mocha --require ../node_modules/babel-core/register test"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
   }
 }

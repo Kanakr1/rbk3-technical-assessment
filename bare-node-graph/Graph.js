@@ -10,29 +10,42 @@ var fs = require('fs');
 
 var Graph = function (adjacencyListPath) {
   // Structure the graph in JavaScript in a way that will be of service to you
-  this.nodes;
+  this.obj = {}
+  fs.readFileSync('./adjacency_lists/basic').toString().split('\n').forEach(function(line){
+  	var array = JSON.parse("[" + line + "]");
+  	this.obj[array[0]] = array;
+  	array = [];
+  })
 
+  this.nodes = Object.keys(obj);
   // String with your claim of the time complexity for `numberOfNodes`
-  this.numberOfNodesTimeComplexity = undefined;
+  this.numberOfNodesTimeComplexity = 'O(1)';
 
   // String with your claim of the time complexity for `getEdges`
-  this.getEdgesTimeComplexity = undefined;
+  this.getEdgesTimeComplexity = 'O(1)';
 
   // String with your claim of the time complexity for `numberOfEdges`
-  this.numberOfEdgesTimeComplexity = undefined;
+  this.numberOfEdgesTimeComplexity = 'O(n)';
 
 };
 
 // Returns the number of nodes in the graph
 Graph.prototype.numberOfNodes = function () {
+	return this.nodes.length;
 };
 
 // Returns an array of the edges for the passed in `node`
 Graph.prototype.getEdges = function (node) {
+		return this.obj[node]
 };
-
 // Returns the number of edges for the graph.
 Graph.prototype.numberOfEdges = function () {
+	var counter = 1 ;
+	var counter2 = 0 ; 
+	for(var key in this.obj){
+		counter2 += obj[key].length - counter;
+		counter++;
+	}
 };
 
 module.exports = Graph;

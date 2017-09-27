@@ -56,25 +56,23 @@ describe('User Controller', function () {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
     // var usersData = User.find();
-    console.log(Controller.getUserByName)
-    expect(controller.getUserByName).to.be.equal(method);
-    return done;
+     expect(controller.getUserByName).to.be.a('function');
+    return done();
 
   });
 
 it('should have a method that given the name of a user, updates their `email` property', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
-        expect(controller.updateEmailByName).to.be.equal(method);
-        return done;
-
+          expect(controller.updateEmailByName).to.be.a('function');
+            return done();
   });
 
   it('should have a method that reads all users from the database at once', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
-    expect(controller.readAllUsers).to.be.equal(method);
-    return done;
+      expect(controller.readAllUsers).to.be.a('function');
+        return done();
   });
 
 });

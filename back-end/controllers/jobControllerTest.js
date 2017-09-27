@@ -29,20 +29,19 @@ describe('Job Controller', function () {
         {
           job : "Teacher"
         },
-      ]
+      ];
       // TODO: Seed database with some jobs to run tests against. 
       Job.create(jobs, done);
     });
   });
 
   it("should create Job",function (done){
-    expect(controller.createJob).to.be.equal(method);
-    return done;
-  })
+      expect(controller.createJob).to.be.a('function');
+        return done();
+  });
 
   it("should get High Paying Jobs",function (done){
-    expect(controller.getHighPayingJobs).to.be.equal(method);
-    return done;
-  })
-
+      expect(controller.getHighPayingJobs).to.be.a('function');
+        return done();
 });
+  });
