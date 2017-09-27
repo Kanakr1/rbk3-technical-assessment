@@ -9,6 +9,9 @@ var bodyParser=require('body-parser');
 	
 // })
 
+var uri='mongodb://localhost/jobquery';
+mongoose.connect(uri);
+var db=mongoose.connection;
 app.use(express.bodyParser());
 
 
@@ -16,8 +19,20 @@ app.use(express.bodyParser());
 
 // get request to the server to fetch all users
 app.get('/api/users', function(req, res){
+	findAll()
+	.then(function(error, users){
+		if(error){
+			throw error;
+		}
+		else{
+			res.json(users);
 
+		}
+	});
 });
+
+
+
 
 //make a post request from the client to the server to make a new user
 app.post('/api/users', function(req, res){
