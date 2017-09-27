@@ -5,6 +5,11 @@ var exampleUser = {
 };
 
 var mongoose=require('mongoose');
+mongoose.connect('mongodb://localhost/mydatabase');
+var db=mongoose.connection;
+db.once('open',function(){
+	console.log(mongodb is open )
+})
 
 var UserSchema =mongoose.Schema({
 	name:String,
