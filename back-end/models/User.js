@@ -3,5 +3,14 @@ var exampleUser = {
   name: 'Taka',
   email: 'taka@taka.com'
 };
+// mongoose.connect('mongodb://localhost/m')
+var mongoose=require('mongoose');
+var schema=mongoose.Schema;
 
+var UserSchema=new schema({
+	name:String,
+	email:String
 
+})
+var User=mongoose.model('User',UserSchema)
+module.exports=User;
