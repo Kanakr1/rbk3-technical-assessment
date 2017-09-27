@@ -51,6 +51,8 @@ exports.getOne = function (id) {
 
 exports.addOne = function (user) {
   users.push(user);
+  user.id=getNextId();
+  
 };
 
 exports.updateOne = function (id, newProperties) {

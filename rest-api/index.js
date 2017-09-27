@@ -15,8 +15,7 @@ app.get('/api/users', function(req, res){
 			throw error;
 		}
 		else{
-			res.json(users);
-
+			res.send(200 + " " +"OK", json(users));
 		}
 	});
 });
@@ -24,26 +23,26 @@ app.get('/api/users', function(req, res){
 //Create new user* and return JSON of new user
 app.post('/api/users', function(req, res){
   Users.addOne()
-  .then(function(error, user){
+  .then(function(error, newUser){
 		if(error){
 			throw error;
 		}
 		else{
-			res.json(user + " " + "added");
-
+			// res.json(user + " " + "added");
+			res.send(201 + " " +"OK", json(newUser));
 		}
 	});
 });
 
 //Return JSON of single user with matching `id`
-app.get('/api/users/:id', function(req, res){
+app.get('/api/users/:id', function(req, res, id){
 	Users.getOne()
-	.then(id, function(error, user){
+	.then(function(error, user){
 		if(error){
 			throw error;
 		}
 		else{
-			res.json("User:" + " " +user)
+			res.send(200 + " " +"OK", json(user));
 		}
 	});
 });
@@ -51,27 +50,27 @@ app.get('/api/users/:id', function(req, res){
 
 
 // Update user** with matching `id` and return JSON of user
-app.put('/api/users/:id', function(req, res){
+app.put('/api/users/:id', function(req, res, id, newProperties){
 	Users.updateOne()
-	.then(id, function(error, user){
+	.then(function(error, user){
 		if(error){
 			throw error;
 		}
 		else{
-			res.json(user + " " + "updated")
+			res.send(200 + " " +"OK", json(user + " "+ "Updated"));
 		}
 	});
 });
 
  // Delete user with matching `id` and return JSON of user
-app.delete('/api/users/:id', function(req, res){
+app.delete('/api/users/:id', function(req, res, id){
 	Users.deleteOne()
-	.then(id, function(error, user){
+	.then(function(error, user){
 		if(error){
 			throw error;
 		}
 		else{
-			res.json(user + " " + "deleted")
+			res.send(200 + " " +"OK", json(user + " "+ "deleteed"));
 		}
 	});
 });
