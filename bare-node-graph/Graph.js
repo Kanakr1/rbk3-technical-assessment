@@ -8,31 +8,52 @@ var fs = require('fs');
 
 // HINT: Each line in the adjacency list is separated by newline character (`\n`).
 
-var Graph = function (adjacencyListPath) {
+var Graph = function (node, connectedNode) {
   // Structure the graph in JavaScript in a way that will be of service to you
-  this.nodes;
+  // this.nodes;
 
-  // String with your claim of the time complexity for `numberOfNodes`
-  this.numberOfNodesTimeComplexity = undefined;
+  // // String with your claim of the time complexity for `numberOfNodes`
+  // this.numberOfNodesTimeComplexity = undefined;   
 
-  // String with your claim of the time complexity for `getEdges`
-  this.getEdgesTimeComplexity = undefined;
+  // // String with your claim of the time complexity for `getEdges`
+  // this.getEdgesTimeComplexity = undefined;   
 
-  // String with your claim of the time complexity for `numberOfEdges`
-  this.numberOfEdgesTimeComplexity = undefined;
-
+  // // String with your claim of the time complexity for `numberOfEdges`
+  // this.numberOfEdgesTimeComplexity = undefined;
+	this.arr = [];
+	this.node = node;
+	this.connectedNode = connectedNode;
 };
 
-// Returns the number of nodes in the graph
+Graph.prototype.makeGraph= function (){
+	this.arr.push(this.connectedNode)
+	this.Graph[this.node] = this.arr;
+}
+
+// Returns the number of nodes in the graph. //6
 Graph.prototype.numberOfNodes = function () {
+	var this.arr= Object.keys()
+	return this.arr.length;
 };
 
-// Returns an array of the edges for the passed in `node`
+// Returns an array of the edges for the passed in `node` 
 Graph.prototype.getEdges = function (node) {
+	var arrString = this.Graph[this.node].map(String)
+	return arrString;
 };
 
-// Returns the number of edges for the graph.
+// Returns the number of edges for the graph.   //7
 Graph.prototype.numberOfEdges = function () {
+ 	var count = 0;
+ 	for (var key in this.Graph){
+ 		count = count + this.Graph[key].length
+ }
+ return counter/2;
 };
 
 module.exports = Graph;
+
+
+
+
+
