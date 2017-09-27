@@ -12,7 +12,7 @@ users;
 constructor(private serviceComponent: ServiceComponent){}
 
 ngOnInit(){
-this.serviceComponent.getUsers().subscribe((users) => this.users = users);
+this.serviceComponent.getUsers().subscribe((users) => console.log(users));
 }
 
 
