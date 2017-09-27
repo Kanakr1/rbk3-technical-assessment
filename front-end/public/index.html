@@ -1,2 +1,109 @@
 <!-- YOUR CODE HERE -->
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
+	<title>Users</title>
+</head>
+<body>
+
+	<div id = 'app'> 
+	</div>
+	<script type="text/babel" >
+		class App extends React.Component {
+  			constructor(props) {
+    			super(props);
+  			}
+  			render() {
+    			return (
+      				<div>
+      					<h1>Hello There!</h1>
+      					<Getusers />
+      					<Users />
+      					<Add />
+      				</div>
+    			);
+  			}
+		}
+
+		class Getusers extends React.Component {
+  			constructor(props) {
+    			super(props)
+    			this.users = []
+  			}
+
+  			getAll () {
+  				$.ajax({
+  				type: 'GET',
+  				dataType: 'json',
+  				async: false,
+  				url: '/users',
+  				success: function(data) {
+  				console.log(data)
+  				this.users = data
+  				console.log(this.users)
+  			}
+  			})
+  			}
+
+  			render() {
+    			return (
+    			<div>
+    				<h3>Would you like to see my users ?</h3>
+    				<h4> Just Press this Button ==> </h4> <button name = "GetAll" onClick = {this.getAll} >Get Users</button>
+    				
+    					{_.each(this.users, (item,index) => 
+                       <Users elemnt = {item} />
+                         )}
+    					
+    			</div>
+    			)
+    		}
+    	}
+
+    	class Users extends React.Component {
+  			constructor(props) {
+    			super(props);
+  			}
+  			render() { return( <div>
+  				{this.props.elemnt}
+  			</div>) }}
+
+
+  		class Add extends React.Component {
+  			constructor(props) {
+    			super(props);
+  			}
+  			add() {
+  				$.ajax({
+  				type: 'POST',
+  				data: {
+  				name: name, <!-- Data from the input named name -->
+  				email: email <!-- Data from the input named email -->
+  			},
+  			dataType: 'json',
+  				async: false,
+  				url: '/users',
+  				success: function(data) {
+  				<!-- pushing the data in the db.json file -->
+  				console.log(data)
+  			}
+  			})
+  			}
+  		
+  			render() { return( <div>
+  				<h3>Or would you like to add user?</h3>
+  				<input type="text" name="user" placeholder="the name of the user" />
+  				<input type="text" name="email" placeholder="His email" />
+  				<button onClick = {this.add} >Add</button>
+  			</div>) }}
+ReactDOM.render(<App />, document.getElementById('app'));
+	</script>
+
+</body>
+</html>
