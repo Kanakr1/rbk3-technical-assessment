@@ -44,12 +44,14 @@ exports.getOne = function (id) {
 };
 
 exports.addOne = function (user) {
+  users=newUsers;
+
 
 
 };
 
 exports.updateOne = function (id, newProperties) {
-  
+
 };
 
 exports.deleteOne = function (id) {
