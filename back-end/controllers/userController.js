@@ -1,5 +1,4 @@
 var User = require ('../models/User.js');
-var Job = require ('../models/Job.js');
 
 
 
@@ -35,8 +34,6 @@ exports.updateEmailByName = function (name, newEmail, callback) {
 
 // Read all users from the database at once
 exports.readAllUsers = function (callback) {
-  User.find().exec(
-    callback
-    )
+  User.find().exec(callback)
   
 };
