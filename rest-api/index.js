@@ -22,7 +22,7 @@ app.post('/api/users',function(req,res){
 	  type: 'GET',
 	  dataType: 'application/json',
 	  dataType:'json'
-	  data:{id:users.id, name:users.name, email:users.email}
+	  headers:{jsone.stringify({id:users.id, name:users.name, email:users.email})}
     }) 
 })
 
@@ -42,7 +42,14 @@ app.put('/api/users/:id ',function(req,res){
 
 app.delete('/api/users/:id',function(req,res){
 	//i have to delete user by id using the function deleteOne
-	// send the user 
+	// send the user
+	$.ajax({
+	  url:'/api/users',
+	  type: 'DELETE',
+	  dataType: 'application/json',
+	  dataType:'json'
+	  headers:{jsone.stringify({deleteOne()})}
+    }) 
 	if(!err){
 		return deleteOne();
 	}
