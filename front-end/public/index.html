@@ -6,8 +6,22 @@
 <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
 
 </head>
-<body>
-	<ul ng-controller="WorldCtrl">
+<body ng-controller="WorldCtrl">
+<div>
+Name:<input type="text" ng-model="yourName" placeholder="Enter a username here">
+Email:<input type="text" ng-model="youremail" placeholder="Enter a youremail here">
+<a ng-href='#here' ng-click='creatJob()'>creatJob</a>
+</br>
+<a ng-href='#here1' ng-click='getHighPingJobs()' >getHighPingJobs</a>
+</br>
+<a ng-href='#here2' ng-click='getuserByName()'>getuserByName</a>
+</br>
+<a ng-href='#here3' ng-click='readAllUsers()' >readAllUsers</a>
+
+
+</div>
+    <div>
+	<ul>
     <li ng-repeat="job in Jod">
         {{job.company}} 
         {{job.title}}
@@ -16,6 +30,7 @@
         {{job.salary}}      
     </li>
     </ul>
+    </div>
     
 </body>
 </html>
