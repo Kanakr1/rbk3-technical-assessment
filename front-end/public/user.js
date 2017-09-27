@@ -44,5 +44,8 @@ app.get('/api/users/:id', function(req, res){
 
 });
 
-app.listen(port);
-console.log("Listening ...")
+app.listen(port, function () {
+  console.log('listening on 3000');
+});
+
+module.exports=app;
