@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var mongoose = require('mongoose');
 var User = require('../models/User');
-
+var Control = require('./userController')
 
 var dbURI = 'mongodb://localhost/jobquery';
 
@@ -54,16 +54,28 @@ describe('User Controller', function () {
   it('should have a method that given the name of a user, retrieves their record from the database', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+    Control.getUserByName('Magee', function(err, data){
+      expect(data[0].email).equals('magee@magee.com');
+    });
+    done();
   });
 
   it('should have a method that given the name of a user, updates their `email` property', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+    Control.updateEmailByName('Magee', "firas@hehe.com", function(err, data){
+      expect(data[0].email).equals('firas@hehe.com');
+    });
+    done();
   });
 
   it('should have a method that reads all users from the database at once', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+    Control.readAllUsers(function(data){
+      expect(data.length).equals(5);
+    });
+    done();
   });
 
 });
