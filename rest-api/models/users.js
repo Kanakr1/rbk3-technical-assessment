@@ -38,13 +38,30 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+  //we search about the user by his id
+  for(i=0; i<users.length; i++){
+    if(users[i].id === id)
+      return users[i]
+  }
 };
 
 exports.addOne = function (user) {
+  users.push(user)
 };
 
 exports.updateOne = function (id, newProperties) {
+// we checke if the user id in the array and then we update the propertie on it
+   for(i=0; i<users.length; i++){
+    if(users[i].id === id)
+      users[i]['newProp']=newProperties
+  }
+
 };
 
 exports.deleteOne = function (id) {
+  //we checke the user by id and delet it
+  for(i=0; i<users.length; i++){
+    if(users[i].id === id)
+      users[i].slice(i,1)
+  } 
 };
