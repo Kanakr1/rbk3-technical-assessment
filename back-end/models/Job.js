@@ -6,7 +6,7 @@ var schema= new mongoose.Schema({
 	company: String,
   	title: String,
   	escription: String,
-  	postedDate: Boolean,
+  	postedDate: Date,
   	salary: Number
 
 });
