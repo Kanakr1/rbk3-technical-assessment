@@ -38,13 +38,28 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
+  if(id<nextId){
+    return users[id-1];
+  }
+  else {
+    result="not found"
+    return result;
+  }
 };
 
 exports.addOne = function (user) {
+  id=getNextId();
+  user.id=id;
+  users.push(user);
+
 };
 
 exports.updateOne = function (id, newProperties) {
+  user=users[id-1];
+  user.name=newProperties.name;
+  user.email=newPropertie.email
 };
 
 exports.deleteOne = function (id) {
+  users.splice(id-1,1);
 };

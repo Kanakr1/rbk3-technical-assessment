@@ -26,4 +26,36 @@ describe('Job Controller', function () {
   });
 
   // TODO: Write your tests for jobController here
-});
+it('should have a method that given the the job object , save them to the database ', function (done) {
+
+
+job={company: 'New Horizon',
+          title: 'Trainer',
+          description:'Training IT courese',
+          postedDate:22-10-2015,
+          salary:15000
+        }
+         
+    Job.createJob(job,function (){
+
+          done();
+    });
+  });
+
+it('should have a method that return the jobs with the salary bigger than 50000 ', function (done) {
+
+
+job={company: 'New Horizon',
+          title: 'Trainer',
+          description:'Training IT courese',
+          postedDate:22-10-2015,
+          salary:51000
+        }
+         
+    Job.getHighPayingJobs(function (){
+
+          done();
+    });
+  });
+  
+

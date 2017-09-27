@@ -1,2 +1,22 @@
 <!-- YOUR CODE HERE -->
+<html lang="en" ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>Front End</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <form action="/users" method="get">
+  <input type="submit" value="Get Users">
+</form>
+<form action="/users/id" method="post">
+	<label for="POST-name">add user:</label>
+  <input id="POST-name" type="text" name="name">
+  <input type="submit" value="Add Users">
+</form>
+  <body>
+  	<app app.js></app>
+  </body>
+</html>
+
 

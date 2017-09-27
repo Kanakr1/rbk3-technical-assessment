@@ -1,0 +1,29 @@
+<!-- YOUR CODE HERE -->
+<html lang="en" ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>rest api</title>
+  </head>
+  <form action="/api/users" method="get">
+  <input type="submit" value="Get Users">
+</form>
+
+<form action="/api/users" method="post">
+	<label for="POST-name">user name:</label>
+  <input id="POST-name" type="text" name="name">
+  <label for="POST-name">user email:</label>
+  <input id="POST-name" type="text" name="mail">
+  <input type="submit" value="Add User">
+</form>
+<form action="/api/users/:id" method="get">
+  <label for="POST-name">input id:</label>
+  <input id="POST-name" type="text" name="id">
+  <input type="submit" value="Get User">
+</form>
+
+  <body>
+  	<app app.js></app>
+  </body>
+</html>
+
+
