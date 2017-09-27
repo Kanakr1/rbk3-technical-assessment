@@ -7,8 +7,6 @@ app.use(bodyParser.json());
 
 // YOUR CODE BELOW
 
-// import * as x from '/module/users.js';
-
 app.get('/', function(req,res){
 	
 	res.send(JSON.stringify(Users.getAll()));

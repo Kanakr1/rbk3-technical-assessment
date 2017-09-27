@@ -47,9 +47,10 @@ exports.getOne = function (id) {
 };
 
 exports.addOne = function (user) {
-  users.push(user);
+  users.push({id: (users[users.length-1].id)+1, name: user.name, email: user.email? user.email : null});
+  return users[users.length-1];
 };
-
+// *New users should be assigned __a numeric auto-incremented__ `id` when created
 exports.updateOne = function (id, newProperties) {
   for(var i=0;i<users.length; i++){
     if(users[i].id === id){
