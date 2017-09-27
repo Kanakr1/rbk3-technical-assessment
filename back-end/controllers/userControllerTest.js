@@ -60,6 +60,12 @@ describe('User Controller', function () {
     // value from the function
     // is equal to the value of the email inside 
     // database
+    fakeUser={name: 'hiba',
+          email: '1'
+    }
+    should.not.exist(err);
+    user.should.have.prorperty(email) = (1)
+    should.not.exist(err);
     expect().to.be()
   });
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
@@ -70,6 +76,10 @@ describe('User Controller', function () {
     //or not 
     // if the input of the function 
     // is equal to the new value in data base
+    fakeUser={name: 'hiba',
+          email: 'new email'
+    }
+    should.not.exist(err);
     expect()
   });
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
@@ -78,6 +88,10 @@ describe('User Controller', function () {
     //this test should test the function if after 
     //the function is excuted the data returned
     // from the function is equal to the all users in db
+    fakeUser={name: 'hiba',
+          email: '1'
+    }
+    should.not.exist(err);
     expect()
   });
 
