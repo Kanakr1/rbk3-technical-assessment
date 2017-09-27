@@ -1,6 +1,7 @@
 var expect = require('chai').expect;
 var mongoose = require('mongoose');
 var User = require('../models/User');
+var UserController = require('./usercontroller')
 
 
 var dbURI = 'mongodb://localhost/jobquery';
@@ -54,16 +55,21 @@ describe('User Controller', function () {
   it('should have a method that given the name of a user, retrieves their record from the database', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+       if(expect(UserController.getUserByName).to.be.a("function")) {done()};
+
   });
 
   it('should have a method that given the name of a user, updates their `email` property', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+    if(expect(UserController.updateEmailByName).to.be.a('function')){done()};
   });
 
   it('should have a method that reads all users from the database at once', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+       if(expect(UserController.readAllUsers).to.be.a('function')){done()};
+
   });
 
 });
