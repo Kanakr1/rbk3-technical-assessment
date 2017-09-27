@@ -28,8 +28,9 @@ var jobSchema = new Schema({
 var Job = mongoose.model('Job', jobSchema);
 
 // mongoose.connect('http://localhost', 'gettingstarted');
-// var connection = mongoose.createConnection('mongodb://localhost/jobquery');
-// var Job = connection.model('Job', jobSchema);
+mongoose.connect('http://localhost');
+var connection = mongoose.createConnection('mongodb://localhost/jobquery');
+var Job = connection.model('Job', jobSchema);
 
 module.exports = mongoose.model('Job', jobSchema);
 

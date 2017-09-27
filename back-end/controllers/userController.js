@@ -39,9 +39,15 @@ exports.getUserByName = function (name, callback) {
 // Given the name of a user, update their `email` property
 exports.updateEmailByName = function (name, newEmail, callback) {
   // TODO
+  User.find({'name': name}).update({ email: newEmail }, function(err, docs){
+    console.log('done')
+  });;
 };
 
 // Read all users from the database at once
 exports.readAllUsers = function (callback) {
   // TODO
+  User.get(*, function(err, docs){
+    console.log(docs);
+  })
 };
