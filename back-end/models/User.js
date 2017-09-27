@@ -46,6 +46,8 @@ var User = mongoose.model('User', userSchema);
 // export User = new User();
 // export default class {}
 
+module.exports.User;
+
 // run the test inside models 
 //  mocha UserTest.js 
 
@@ -56,3 +58,5 @@ var User = mongoose.model('User', userSchema);
  //  2) User Model should have a schema:
  //     AssertionError: expected undefined to exist
  //      at Context.<anonymous> (UserTest.js:12:27)
+
+ //test doesn't run yet
