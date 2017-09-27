@@ -9,7 +9,7 @@ var JobSchema = new Schema({
 	description:String,
 	postedDate:Number,
 	salary:Number
-})
+});
 
-var Job = mongoose.Model('Job', JobSchema);
+var Job = mongoose.model('Job', JobSchema);
 module.exports = Job;
