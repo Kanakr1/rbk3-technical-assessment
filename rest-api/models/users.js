@@ -38,8 +38,9 @@ exports.setAll = function (newUsers) {
 };
 
 exports.getOne = function (id) {
-  for(Var i=0;i<users.length;i++){
-    if(id===users[i].id){
+  for(var i=0;i<users.length;i++){
+    if(id===users[i]['id']){
+      console.log(users[i]);
       return users[i];
     }
   }
@@ -50,7 +51,7 @@ exports.addOne = function (user) {
 };
 
 exports.updateOne = function (id, newProperties) {
-  for(Var i=0;i<users.length;i++){
+  for(var i=0;i<users.length;i++){
     if(id===users[i].id){
       users[i][newProperties]
     }
@@ -58,7 +59,7 @@ exports.updateOne = function (id, newProperties) {
 };
 
 exports.deleteOne = function (id) {
-  for(Var i=0;i<users.length;i++){
+  for(var i=0;i<users.length;i++){
     if(id===users[i].id){
       users.splice(0,i);
     }

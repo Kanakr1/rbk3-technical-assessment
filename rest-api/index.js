@@ -13,15 +13,29 @@ app.get('/api/users',function (req,res) {
 app.post('/api/users',function (req,res) {
   Users.addOne(req.body.user);
   res.send(JSON.stringify(users));
-
+  res.end();
 })
 
-app.get('/api/users/:',function (req,res) {
 
+app.get('/api/users/:id',function (req,res) {
+  for(var i=0;i<users.length;i++){
+    if(users[i].id==req.url.substring(req.url.lastIndexOf('/')+1)){
+      res.send(JSON.stringify(users[i]));
+    }
+  }
+  res.end();
 })
+
+
+
+app.delete('/api/users/:id',function (req,res) {
+Users.deleteOne(req.url.substring(req.url.lastIndexOf('/')+1));
+res.send(Users.getAll());
+})
+
 
 // Do not touch this invocation of the `listen` method
-app.listen('8888', function () {
+app.listen('1313', function () {
   console.log('listening on 8888');
 });
 
