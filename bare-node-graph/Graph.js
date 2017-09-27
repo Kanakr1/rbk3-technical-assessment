@@ -13,18 +13,25 @@ var Graph = function (adjacencyListPath) {
   this.nodes;
 
   // String with your claim of the time complexity for `numberOfNodes`
-  this.numberOfNodesTimeComplexity = undefined;
+  this.numberOfNodesTimeComplexity = O(1);
 
   // String with your claim of the time complexity for `getEdges`
-  this.getEdgesTimeComplexity = undefined;
+  this.getEdgesTimeComplexity = O(n);
 
   // String with your claim of the time complexity for `numberOfEdges`
-  this.numberOfEdgesTimeComplexity = undefined;
+  this.numberOfEdgesTimeComplexity = O(n);
 
 };
 
 // Returns the number of nodes in the graph
 Graph.prototype.numberOfNodes = function () {
+	var num=fs.readFileSync("./adjacency_lists/basic",function (err,data){
+		if(err){
+			return 404;
+		}
+		return num.length;	
+	})
+
 };
 
 // Returns an array of the edges for the passed in `node`
