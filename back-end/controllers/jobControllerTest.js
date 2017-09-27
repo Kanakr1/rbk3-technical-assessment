@@ -50,7 +50,7 @@ describe('Job Controller', function () {
           title: 'HIR',
           description: "does things",
           postedDate: "20-2-2020",
-          salary: "90"
+          salary: "900000000000000000"
         }
       ];
 
@@ -60,21 +60,31 @@ describe('Job Controller', function () {
 
   // TODO: Write your tests for jobController here
     it('should have a method that given a job creates a new job in the database', function (done) {
-    //this test should test the function if after 
-    //the function is excuted 
-    // in this case the test will check if the returned 
-    // value from the function
-    // is equal to the value of the email inside 
-    // database
-    expect().to.be()
+        // test if the new job inserted to the function is created in the database
+        // maybe i can instead find the NUMBER of intries in database if it increased 
+        // an error shouldnt exist 
+        // a fake job should be added and tested against
+        fakejob={company: 'hiba',
+          title: '1',
+          description: "2",
+          postedDate: "3",
+          salary: "4"
+        }
+        should.not.exist(err);
+        job.should.have.prorperty(title)
+        ob.should.have.prorperty(description)
+        ob.should.have.prorperty(postedDate)
+        ob.should.have.prorperty(salary)
   });
       it('should have a method gets all jobs that have a salary greater than $50,000', function (done) {
-    //this test should test the function if after 
-    //the function is excuted 
-    // in this case the test will check if the returned 
-    // value from the function
-    // is equal to the value of the email inside 
-    // database
-    expect().to.be()
+        //tests if the returned value from the function is equal to all the jobs in the database that are more than 50000
+        fakejob={company: 'hiba',
+          title: '1',
+          description: "2",
+          postedDate: "3",
+          salary: "443232222"
+        }
+       should.not.exist(err);
+       // something here should be true because salary is>50000
   });
 });
