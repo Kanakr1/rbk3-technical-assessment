@@ -1,6 +1,7 @@
 // You'll need the `fs` module to read the adjacency list.
 var fs = require('fs');
 
+
 // HINT: fs.readFileSync is a great way to get the contents of a file.
 // Using the synchronous version of the `readFile` method is appropriate here,
 // because it is not a performance bottleneck.
@@ -25,6 +26,7 @@ var Graph = function (adjacencyListPath) {
 
 // Returns the number of nodes in the graph
 Graph.prototype.numberOfNodes = function () {
+	fs.readFile()
 	// here i weant to return the length of the
 	// Object.keys() it's  === to number of nodes
 };
