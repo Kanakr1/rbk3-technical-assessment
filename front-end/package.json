@@ -1,5 +1,11 @@
 {
   "scripts": {
     "start": "json-server --watch db.json --routes routes.json"
-  }
+  },
+  "name": "users",
+  "description": "You've been given a working backend that implements the following api:",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }

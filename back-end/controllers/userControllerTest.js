@@ -50,20 +50,49 @@ describe('User Controller', function () {
       User.create(users, done);
     });
   });
-
+    // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
+    // HINT: The `done` passed in is quite important...
+    //expect(new Job()).to.be.instanceOf(mongoose.Model);
   it('should have a method that given the name of a user, retrieves their record from the database', function (done) {
+    //this test should test the function if after 
+    //the function is excuted 
+    // in this case the test will check if the returned 
+    // value from the function
+    // is equal to the value of the email inside 
+    // database
+    fakeUser={name: 'hiba',
+          email: '1'
+    }
+    should.not.exist(err);
+    user.should.have.prorperty(email) = (1)
+    should.not.exist(err);
+    expect().to.be()
+  });
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
-  });
-
   it('should have a method that given the name of a user, updates their `email` property', function (done) {
-    // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
-    // HINT: The `done` passed in is quite important...
+    //this test should test the function if after 
+    //the function is excuted the data base is changed 
+    //or not 
+    // if the input of the function 
+    // is equal to the new value in data base
+    fakeUser={name: 'hiba',
+          email: 'new email'
+    }
+    should.not.exist(err);
+    expect()
   });
-
-  it('should have a method that reads all users from the database at once', function (done) {
     // TODO: Write test(s) for a method exported by `userController` that behaves as described one line above
     // HINT: The `done` passed in is quite important...
+  it('should have a method that reads all users from the database at once', function (done) {
+    //this test should test the function if after 
+    //the function is excuted the data returned
+    // from the function is equal to the all users in db
+    fakeUser={name: 'hiba',
+          email: '1'
+    }
+    should.not.exist(err);
+    expect()
   });
 
 });
