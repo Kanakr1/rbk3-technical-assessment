@@ -20,4 +20,4 @@ var exampleUser = {
   email: 'taka@taka.com'
 };
 
-module.exports.User = User;
+module.exports = User;

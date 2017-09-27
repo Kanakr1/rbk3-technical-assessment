@@ -2,9 +2,13 @@
 var mongoose = require('mongoose');
 
 var jobSchema = mongoose.Schema({
-    name: String,
-    email: String
+    company: String,
+    title: String,
+    description: String,
+    postedDate: Date,
+    salary: Number
 });
+
 var Job = mongoose.model('Job', jobSchema);
 
-module.exports.Job = Job;
+module.exports = Job;
