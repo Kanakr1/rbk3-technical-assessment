@@ -1,27 +1,33 @@
 <!-- YOUR CODE HERE -->
 <!DOCTYPE html>
-<html ng-app="userApp">
+<html ng-app="userApp" ng-controller="appController">
 <head>
 	<title></title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
 	<script src="jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<div>
-		<label>Name:</label>
+		<label> Add User Here:</label>
 		<br>
-		<input type="text" ng-model="userName" placeholder="User Name Here">	
+		<form ng-submit="usersList.addUser()">
+			<input type="text" ng-model="usersList.user" placeholder="add new user here">
+			<input class="btn-primary" type="submit" value=add>	
+		</form>
 	</div>
-	<form ng-submit="usersList.addUser()">
-		<input type="text" ng-model="usersList.user" placeholder="add new user here">
-		<input class="btn-primary" type="submit" value=add>	
-	</form>
+	<br>
+	<br>
 	<div>
-		<li ng-repeat="user in usersList.users">
+		<label> View Users:</label>
+		<ul repeat="user in usersList.users">
+			<!-- {{$index}}: --> 
+			{{usersList.users}}
+		
+		</ul> 
 			
-		</li>	
-		</div>
-	</body>
-	</html>
+	</div>
+</body>
+</html>
 

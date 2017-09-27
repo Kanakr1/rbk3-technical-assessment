@@ -12,6 +12,7 @@ angular.module('userApp', []);
  	angular.forEach(usersList.users, function(user)){
  		return user;
  	}
+ 	// I have to getData from server 
  }
 
 
