@@ -1,5 +1,6 @@
 var expect = require('chai').expect;
 var mongoose = require('mongoose');
+var Job = require('../models/Job');
 
 
 var dbURI = 'mongodb://localhost/jobquery';
@@ -22,8 +23,23 @@ describe('Job Controller', function () {
   beforeEach(function (done) {
     clearDB(function () {
       // TODO: Seed database with some jobs to run tests against. 
+       var jobs = [
+        {
+          occupation: 'cooker',
+          salary: 20000
+        },
+        {
+          occupation: 'engineer',
+          salary: 30000
+        },
+        {
+          occupation: 'artist',
+          salary: 60000
+        }        
+      ];
     });
   });
 
+    Job.create(jobs, done);
   // TODO: Write your tests for jobController here
 });

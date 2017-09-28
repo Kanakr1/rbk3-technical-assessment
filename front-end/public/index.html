@@ -1,2 +1,23 @@
-<!-- YOUR CODE HERE -->
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+<div ng-app="">
+  <p>Name : <input type="text" ng-model="name"></p>
+   ajax({
+   var name = {name:name}
+   url: '/api/users',
+   data: JSON.strigefy(name)
+   method:'post',
+   content-data: 'application/json'
+   success: function(result){
+        console.log('hello');
+
+
+  <h1>{{name}}</h1>
+</div>
+
+</body>
+</html>
 
