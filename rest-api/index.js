@@ -5,8 +5,36 @@ var Users = require('./models/users');
 var app = express();
 app.use(bodyParser.json());
 
-// YOUR CODE BELOW
+app.get('/api/users', function(req, res) {
+    res.json(Users.getAll())
 
+});
+
+app.post('/api/users', function(req, res) {
+
+	var newuser = req.body
+	res.json(Users.addOne(newuser))
+  
+});
+
+app.get('/user/id', function(req, res) {
+	res.json(Users.getOne(id))
+  
+});
+
+app.post('/id', function(req, res) {
+	 var neweamail= req.body 
+	 //var id = ObjectId(req.body.params[0])
+	 res.json(Users.updateOne(id,neweamail))
+  
+});
+
+app.post('/id', function(req, res) {
+	var id = ObjectId(req.body.params[0])
+	res.json(Users.deleteOne(id))
+	
+  
+});
 
 
 // Do not touch this invocation of the `listen` method
