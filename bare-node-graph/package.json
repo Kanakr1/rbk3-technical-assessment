@@ -1,5 +1,8 @@
 {
   "scripts": {
     "test": "mocha --require ../node_modules/babel-core/register test"
+  },
+  "devDependencies": {
+    "babel-register": "^6.26.0"
   }
 }
